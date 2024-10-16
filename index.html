@@ -3,10 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifólio Kennedy Souza</title>
+    <title>Kennedy's Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">    
+
+    <!-- Dev Icons Fonts -->
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <!-- Project CSS-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
 </head>
 <body>
-    <h1>In Progress...</h1>
+    <main id="container">
+        <aside id="bio-container">
+            <h2>Kennedy Souza</h2>
+            <img id="bio-image" src="img/profile.jpeg" alt="Kennedy Souza">
+            <p>Hello, my name is Kennedy Souza and i'm a <span class="highlight">Full-Stack Developer</span></p>
+            <p id="welcome-text">Welcome!</p>
+            <ul id="social-container">
+                <li><a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            </ul>
+            <div id="email-container">
+                <ion-icon name="mail-outline"></ion-icon><a href="mailto:kennedysantossouza@hotmail.com">kennedysantossouza@hotmail.com</a>
+            </div>
+        </aside>
+        <section id="about-container">
+            <h1 id="name">Kennedy Souza</h1>
+            <p id="title"><span class="highlight">Full-Stack Developer</span></p>
+            <p class="description">I have over 10 years of experience in development. One of the projects I take the most pride in was at Santander, where I transformed a cash flow control system, initially developed in Access, into a much more dynamic, efficient, and lightweight web application. Additionally, I integrated this solution with other systems used in operations, unifying everything into a robust web tool that significantly increased the productivity and effectiveness of the employees involved.</p>
+            <a href="#" id="btn-projects"><ion-icon name="share-social-outline"></ion-icon><span>See Projects</span></a>
+
+            <h2 id="skills-section-title">Discover my Skills</h2>
+            <div id="skills-container">
+                <div class="skills-box">
+                    <p class="skills-title">Front-End</p>
+                    <i class="devicon-html5-plain colored"></i>
+                    <i class="devicon-css3-plain colored"></i>
+                    <i class="devicon-javascript-plain colored"></i>
+                    <i class="devicon-jquery-plain colored"></i>
+                </div>
+                <div class="skills-box">
+                    <p class="skills-title">Back-End</p>
+                    <i class="devicon-php-plain colored"></i>
+                    <i class="devicon-python-plain colored"></i>
+                    <i class="devicon-ruby-plain colored"></i>
+                    <i class="devicon-nodejs-plain colored"></i>
+                </div>
+                <div class="skills-box">
+                    <p class="skills-title">Databases</p>
+                    <i class="devicon-mysql-plain colored"></i>
+                    <i class="devicon-postgresql-plain colored"></i>
+                    <i class="devicon-mongodb-plain colored"></i>
+                </div>
+                <div class="skills-box">
+                    <p class="skills-title">Front-End Frameworks</p>
+                    <i class="devicon-svelte-plain colored"></i>
+                </div>
+                <div class="skills-box">
+                    <p class="skills-title">Back-End Frameworks</p>
+                    <i class="devicon-rails-plain colored"></i>
+                </div>
+                <div class="skills-box">
+                    <p class="skills-title">Tools</p>
+                    <i class="devicon-docker-plain colored"></i>
+                </div>
+            </div>
+        </section>
+
+    </main>
     
+
+
+
+    <!-- Ion Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
