@@ -3,89 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kennedy's Portfolio</title>
+    <title>Kennedy Souza | Full-Stack Developer</title>
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">    
 
     <!-- Dev Icons Fonts -->
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
     <!-- Project CSS-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/alertify.css">
-
-    
 </head>
 <body>
-    <main id="container">
-        <aside id="bio-container">
-            <h2>Kennedy Souza</h2>
-            <img id="bio-image" src="img/profile.jpeg" alt="Kennedy Souza">
-            <p>Hello, my name is Kennedy Santos Souza and i'm a <span class="highlight">Full-Stack Developer</span></p>
-            <p id="welcome-text">Welcome!</p>
-            <ul id="social-container">
-                <li><a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Kennedy<span class="gradient-text">.</span></div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div id="email-container">
-                <ion-icon name="mail-outline"></ion-icon><a href="mailto:kennedysantossouza@hotmail.com">kennedysantossouza@hotmail.com</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        </aside>
-        <section id="about-container">
-            <h1 id="name">Kennedy Souza</h1>
-            <p id="title"><span class="highlight">Full-Stack Developer</span></p>
-            <p class="description">I have over 12 years of experience in development. One of the projects I take the most pride in was at Santander, where I transformed a cash flow control system, initially developed in Access, into a much more dynamic, efficient, and lightweight web application. Additionally, I integrated this solution with other systems used in operations, unifying everything into a robust web tool that significantly increased the productivity and effectiveness of the employees involved.</p>
-            <a href="javascript:void(0)" id="btn-projects" onclick="inProgress()"><ion-icon name="share-social-outline"></ion-icon><span>See my Projects</span></a>
+        </div>
+    </nav>
 
-            <h2 id="skills-section-title">Discover my Skills</h2>
-            <div id="skills-container">
-                <div class="skills-box">
-                    <p class="skills-title">Front-End</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text fade-in">
+                <p class="hero-greeting">👋 Hello, I'm</p>
+                <h1 class="hero-title">Kennedy Souza</h1>
+                <h2 class="hero-subtitle">Full-Stack Developer</h2>
+                <p class="hero-description">Transforming ideas into elegant digital solutions with <span class="gradient-text">12+ years</span> of expertise</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Get In Touch</span>
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                    <a href="mailto:kennedysantossouza@hotmail.com" class="social-icon" aria-label="Email">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image fade-in">
+                <div class="profile-card">
+                    <div class="profile-img-wrapper">
+                        <img src="img/profile.jpeg" alt="Kennedy Souza" class="profile-img">
+                        <div class="profile-ring"></div>
+                    </div>
+                    <div class="floating-badge badge-1">
+                        <ion-icon name="code-slash-outline"></ion-icon>
+                        <span>12+ Years</span>
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <ion-icon name="rocket-outline"></ion-icon>
+                        <span>Full-Stack</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <ion-icon name="chevron-down-outline"></ion-icon>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card reveal">
+                    <div class="stat-icon">
+                        <ion-icon name="code-working-outline"></ion-icon>
+                    </div>
+                    <h3 class="stat-number" data-target="12">0</h3>
+                    <p class="stat-label">Years Experience</p>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon">
+                        <ion-icon name="briefcase-outline"></ion-icon>
+                    </div>
+                    <h3 class="stat-number" data-target="50">0</h3>
+                    <p class="stat-label">Projects Completed</p>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon">
+                        <ion-icon name="trophy-outline"></ion-icon>
+                    </div>
+                    <h3 class="stat-number" data-target="15">0</h3>
+                    <p class="stat-label">Technologies Mastered</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Get to know me</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text reveal">
+                    <p class="about-paragraph">I have over <strong>12 years of experience</strong> in development, specializing in creating robust and scalable web applications. My expertise spans across both front-end and back-end technologies, allowing me to deliver complete solutions.</p>
+                    
+                    <p class="about-paragraph">One of the projects I take the most pride in was at <strong>Santander</strong>, where I transformed a cash flow control system, initially developed in Access, into a much more dynamic, efficient, and lightweight web application. I integrated this solution with other systems used in operations, unifying everything into a robust web tool that significantly increased productivity.</p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <ion-icon name="checkmark-circle-outline"></ion-icon>
+                            <span>Full-Stack Development</span>
+                        </div>
+                        <div class="highlight-item">
+                            <ion-icon name="checkmark-circle-outline"></ion-icon>
+                            <span>System Integration</span>
+                        </div>
+                        <div class="highlight-item">
+                            <ion-icon name="checkmark-circle-outline"></ion-icon>
+                            <span>Legacy System Modernization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">What I do</span>
+                <h2 class="section-title">My Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <div class="skill-header">
+                        <ion-icon name="desktop-outline"></ion-icon>
+                        <h3>Front-End</h3>
+                    </div>
+                    <div class="skill-icons">
+                        <div class="skill-item" data-skill="HTML5">
                     <i class="devicon-html5-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-skill="CSS3">
                     <i class="devicon-css3-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-skill="JavaScript">
                     <i class="devicon-javascript-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-skill="jQuery">
                     <i class="devicon-jquery-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-skill="Svelte">
+                            <i class="devicon-svelte-plain colored"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="skills-box">
-                    <p class="skills-title">Back-End</p>
+
+                <div class="skill-category reveal">
+                    <div class="skill-header">
+                        <ion-icon name="server-outline"></ion-icon>
+                        <h3>Back-End</h3>
+                    </div>
+                    <div class="skill-icons">
+                        <div class="skill-item" data-skill="PHP">
                     <i class="devicon-php-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-skill="Python">
                     <i class="devicon-python-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-skill="Ruby">
                     <i class="devicon-ruby-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-skill="Node.js">
                     <i class="devicon-nodejs-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-skill="Rails">
+                            <i class="devicon-rails-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-skill="GraphQL">
                     <i class="devicon-graphql-plain colored"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="skills-box">
-                    <p class="skills-title">Databases</p>
+
+                <div class="skill-category reveal">
+                    <div class="skill-header">
+                        <ion-icon name="server-outline"></ion-icon>
+                        <h3>Databases</h3>
+                    </div>
+                    <div class="skill-icons">
+                        <div class="skill-item" data-skill="MySQL">
                     <i class="devicon-mysql-plain colored"></i>
+                        </div>
+                        <div class="skill-item" data-skill="PostgreSQL">
                     <i class="devicon-postgresql-plain colored"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="skills-box">
-                    <p class="skills-title">Front-End Frameworks</p>
-                    <i class="devicon-svelte-plain colored"></i>
+
+                <div class="skill-category reveal">
+                    <div class="skill-header">
+                        <ion-icon name="construct-outline"></ion-icon>
+                        <h3>Tools & DevOps</h3>
+                    </div>
+                    <div class="skill-icons">
+                        <div class="skill-item" data-skill="Docker">
+                            <i class="devicon-docker-plain colored"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="skills-box">
-                    <p class="skills-title">Back-End Frameworks</p>
-                    <i class="devicon-rails-plain colored"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">My work</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Santander Cash Flow System</h3>
+                        <p class="project-description">Modernized a legacy Access system into a dynamic web application, integrating multiple operational systems into a unified platform.</p>
+                        <div class="project-tags">
+                            <span class="tag">Web App</span>
+                            <span class="tag">Integration</span>
+                            <span class="tag">Finance</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="skills-box">
-                    <p class="skills-title">Tools</p>
-                    <i class="devicon-docker-plain colored"></i>
+
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <p class="project-description">Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.</p>
+                        <div class="project-tags">
+                            <span class="tag">E-Commerce</span>
+                            <span class="tag">Full-Stack</span>
+                            <span class="tag">Payment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">CRM System</h3>
+                        <p class="project-description">Custom CRM solution with advanced analytics, customer tracking, and automated workflows.</p>
+                        <div class="project-tags">
+                            <span class="tag">CRM</span>
+                            <span class="tag">Analytics</span>
+                            <span class="tag">Automation</span>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </section>
 
-    </main>
-    
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Let's connect</span>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            <div class="contact-content reveal">
+                <p class="contact-description">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                <div class="contact-methods">
+                    <a href="mailto:kennedysantossouza@hotmail.com" class="contact-card">
+                        <div class="contact-icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Email</h4>
+                            <p>kennedysantossouza@hotmail.com</p>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </div>
+                        <div class="contact-info">
+                            <h4>LinkedIn</h4>
+                            <p>Connect with me</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Kennedy Souza. Crafted with <ion-icon name="heart"></ion-icon> and code.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Ion Icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <script src="js/alertify.js"></script>
-    <script src="js/alertify.min.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>
