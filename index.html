@@ -22,12 +22,16 @@
         <div class="nav-container">
             <div class="nav-logo">Kennedy<span class="gradient-text">.</span></div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
             </ul>
+            <button class="language-toggle" id="languageToggle">
+                <span class="lang-icon">🌐</span>
+                <span class="lang-text">EN</span>
+            </button>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -45,17 +49,17 @@
         </div>
         <div class="hero-content">
             <div class="hero-text fade-in">
-                <p class="hero-greeting">👋 Hello, I'm</p>
+                <p class="hero-greeting" data-i18n="hero.greeting">👋 Hello, I'm</p>
                 <h1 class="hero-title">Kennedy Souza</h1>
-                <h2 class="hero-subtitle">Full-Stack Developer</h2>
-                <p class="hero-description">Transforming ideas into elegant digital solutions with <span class="gradient-text">12+ years</span> of expertise</p>
+                <h2 class="hero-subtitle" data-i18n="hero.subtitle">Full-Stack Developer</h2>
+                <p class="hero-description"><span data-i18n="hero.description">Transforming ideas into elegant digital solutions with</span> <span class="gradient-text" data-i18n="hero.years">12+ years</span> <span data-i18n="hero.descriptionEnd">of expertise</span></p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">
-                        <span>View My Work</span>
+                        <span data-i18n="hero.viewWork">View My Work</span>
                         <ion-icon name="arrow-forward-outline"></ion-icon>
                     </a>
                     <a href="#contact" class="btn btn-secondary">
-                        <span>Get In Touch</span>
+                        <span data-i18n="hero.getInTouch">Get In Touch</span>
                         <ion-icon name="mail-outline"></ion-icon>
                     </a>
                 </div>
@@ -71,7 +75,7 @@
             <div class="hero-image fade-in">
                 <div class="profile-card">
                     <div class="profile-img-wrapper">
-                        <img src="img/profile.jpeg" alt="Kennedy Souza" class="profile-img">
+                        <img src="img/profile_photo.jpeg" alt="Kennedy Souza" class="profile-img">
                         <div class="profile-ring"></div>
                     </div>
                     <div class="floating-badge badge-1">
@@ -99,21 +103,21 @@
                         <ion-icon name="code-working-outline"></ion-icon>
                     </div>
                     <h3 class="stat-number" data-target="12">0</h3>
-                    <p class="stat-label">Years Experience</p>
+                    <p class="stat-label" data-i18n="stats.yearsExperience">Years Experience</p>
                 </div>
                 <div class="stat-card reveal">
                     <div class="stat-icon">
                         <ion-icon name="briefcase-outline"></ion-icon>
                     </div>
                     <h3 class="stat-number" data-target="50">0</h3>
-                    <p class="stat-label">Projects Completed</p>
+                    <p class="stat-label" data-i18n="stats.projectsCompleted">Projects Completed</p>
                 </div>
                 <div class="stat-card reveal">
                     <div class="stat-icon">
                         <ion-icon name="trophy-outline"></ion-icon>
                     </div>
                     <h3 class="stat-number" data-target="15">0</h3>
-                    <p class="stat-label">Technologies Mastered</p>
+                    <p class="stat-label" data-i18n="stats.technologiesMastered">Technologies Mastered</p>
                 </div>
             </div>
         </div>
@@ -123,27 +127,31 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">Get to know me</span>
-                <h2 class="section-title">About Me</h2>
+                <span class="section-tag" data-i18n="about.tag">Get to know me</span>
+                <h2 class="section-title" data-i18n="about.title">About Me</h2>
             </div>
             <div class="about-content">
                 <div class="about-text reveal">
-                    <p class="about-paragraph">I have over <strong>12 years of experience</strong> in development, specializing in creating robust and scalable web applications. My expertise spans across both front-end and back-end technologies, allowing me to deliver complete solutions.</p>
+                    <p class="about-paragraph" data-i18n="about.paragraph1">I have over 12 years of experience in software development, focusing on creating scalable, secure, and sustainable web applications. I work primarily with Ruby on Rails, PostgreSQL, Sidekiq, and Svelte, in addition to managing infrastructure on AWS (EC2, S3, RDS, CloudWatch).</p>
                     
-                    <p class="about-paragraph">One of the projects I take the most pride in was at <strong>Santander</strong>, where I transformed a cash flow control system, initially developed in Access, into a much more dynamic, efficient, and lightweight web application. I integrated this solution with other systems used in operations, unifying everything into a robust web tool that significantly increased productivity.</p>
+                    <p class="about-paragraph" data-i18n="about.paragraph2">I have solid experience in API architecture, integrations with external services, background jobs, deployment automation, and observability (monitoring and metrics). In my workflow, I prioritize automated testing (RSpec), rigorous code review, CI/CD (GitHub Actions and AWS pipelines), and best practices for versioning and security.</p>
+                    
+                    <p class="about-paragraph" data-i18n="about.paragraph3">One of the most relevant projects was at Santander, where I modernized a legacy cash flow control system — originally in Microsoft Access — transforming it into an integrated, lightweight, and highly reliable web application. The project increased operational productivity and reduced failures in manual processes.</p>
+                    
+                    <p class="about-paragraph" data-i18n="about.paragraph4">Currently, I am dedicated to backend engineering with Rails, focusing on scalability, automation, and system integration, always seeking to balance technical quality, delivery speed, and product impact.</p>
                     
                     <div class="about-highlights">
                         <div class="highlight-item">
                             <ion-icon name="checkmark-circle-outline"></ion-icon>
-                            <span>Full-Stack Development</span>
+                            <span data-i18n="about.highlight1">Backend Engineering</span>
                         </div>
                         <div class="highlight-item">
                             <ion-icon name="checkmark-circle-outline"></ion-icon>
-                            <span>System Integration</span>
+                            <span data-i18n="about.highlight2">System Integration</span>
                         </div>
                         <div class="highlight-item">
                             <ion-icon name="checkmark-circle-outline"></ion-icon>
-                            <span>Legacy System Modernization</span>
+                            <span data-i18n="about.highlight3">AWS Infrastructure</span>
                         </div>
                     </div>
                 </div>
@@ -155,14 +163,14 @@
     <section id="skills" class="skills">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">What I do</span>
-                <h2 class="section-title">My Skills</h2>
+                <span class="section-tag" data-i18n="skills.tag">What I do</span>
+                <h2 class="section-title" data-i18n="skills.title">My Skills</h2>
             </div>
             <div class="skills-grid">
                 <div class="skill-category reveal">
                     <div class="skill-header">
                         <ion-icon name="desktop-outline"></ion-icon>
-                        <h3>Front-End</h3>
+                        <h3 data-i18n="skills.frontend">Front-End</h3>
                     </div>
                     <div class="skill-icons">
                         <div class="skill-item" data-skill="HTML5">
@@ -186,7 +194,7 @@
                 <div class="skill-category reveal">
                     <div class="skill-header">
                         <ion-icon name="server-outline"></ion-icon>
-                        <h3>Back-End</h3>
+                        <h3 data-i18n="skills.backend">Back-End</h3>
                     </div>
                     <div class="skill-icons">
                         <div class="skill-item" data-skill="PHP">
@@ -213,7 +221,7 @@
                 <div class="skill-category reveal">
                     <div class="skill-header">
                         <ion-icon name="server-outline"></ion-icon>
-                        <h3>Databases</h3>
+                        <h3 data-i18n="skills.databases">Databases</h3>
                     </div>
                     <div class="skill-icons">
                         <div class="skill-item" data-skill="MySQL">
@@ -228,7 +236,7 @@
                 <div class="skill-category reveal">
                     <div class="skill-header">
                         <ion-icon name="construct-outline"></ion-icon>
-                        <h3>Tools & DevOps</h3>
+                        <h3 data-i18n="skills.devops">Tools & DevOps</h3>
                     </div>
                     <div class="skill-icons">
                         <div class="skill-item" data-skill="Docker">
@@ -244,8 +252,8 @@
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">My work</span>
-                <h2 class="section-title">Featured Projects</h2>
+                <span class="section-tag" data-i18n="projects.tag">My work</span>
+                <h2 class="section-title" data-i18n="projects.title">Featured Projects</h2>
             </div>
             <div class="projects-grid">
                 <div class="project-card reveal">
@@ -255,12 +263,12 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Santander Cash Flow System</h3>
-                        <p class="project-description">Modernized a legacy Access system into a dynamic web application, integrating multiple operational systems into a unified platform.</p>
+                        <h3 class="project-title" data-i18n="projects.project1.title">Santander Cash Flow System</h3>
+                        <p class="project-description" data-i18n="projects.project1.description">Modernized a legacy Access system into a dynamic web application, integrating multiple operational systems into a unified platform.</p>
                         <div class="project-tags">
-                            <span class="tag">Web App</span>
-                            <span class="tag">Integration</span>
-                            <span class="tag">Finance</span>
+                            <span class="tag" data-i18n="projects.project1.tag1">Web App</span>
+                            <span class="tag" data-i18n="projects.project1.tag2">Integration</span>
+                            <span class="tag" data-i18n="projects.project1.tag3">Finance</span>
                         </div>
                     </div>
                 </div>
@@ -272,12 +280,12 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">E-Commerce Platform</h3>
-                        <p class="project-description">Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.</p>
+                        <h3 class="project-title" data-i18n="projects.project2.title">E-Commerce Platform</h3>
+                        <p class="project-description" data-i18n="projects.project2.description">Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.</p>
                         <div class="project-tags">
-                            <span class="tag">E-Commerce</span>
-                            <span class="tag">Full-Stack</span>
-                            <span class="tag">Payment</span>
+                            <span class="tag" data-i18n="projects.project2.tag1">E-Commerce</span>
+                            <span class="tag" data-i18n="projects.project2.tag2">Full-Stack</span>
+                            <span class="tag" data-i18n="projects.project2.tag3">Payment</span>
                         </div>
                     </div>
                 </div>
@@ -289,12 +297,12 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">CRM System</h3>
-                        <p class="project-description">Custom CRM solution with advanced analytics, customer tracking, and automated workflows.</p>
+                        <h3 class="project-title" data-i18n="projects.project3.title">CRM System</h3>
+                        <p class="project-description" data-i18n="projects.project3.description">Custom CRM solution with advanced analytics, customer tracking, and automated workflows.</p>
                         <div class="project-tags">
-                            <span class="tag">CRM</span>
-                            <span class="tag">Analytics</span>
-                            <span class="tag">Automation</span>
+                            <span class="tag" data-i18n="projects.project3.tag1">CRM</span>
+                            <span class="tag" data-i18n="projects.project3.tag2">Analytics</span>
+                            <span class="tag" data-i18n="projects.project3.tag3">Automation</span>
                         </div>
                     </div>
                 </div>
@@ -306,18 +314,18 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">Let's connect</span>
-                <h2 class="section-title">Get In Touch</h2>
+                <span class="section-tag" data-i18n="contact.tag">Let's connect</span>
+                <h2 class="section-title" data-i18n="contact.title">Get In Touch</h2>
             </div>
             <div class="contact-content reveal">
-                <p class="contact-description">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                <p class="contact-description" data-i18n="contact.description">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
                 <div class="contact-methods">
                     <a href="mailto:kennedysantossouza@hotmail.com" class="contact-card">
                         <div class="contact-icon">
                             <ion-icon name="mail-outline"></ion-icon>
                         </div>
                         <div class="contact-info">
-                            <h4>Email</h4>
+                            <h4 data-i18n="contact.emailLabel">Email</h4>
                             <p>kennedysantossouza@hotmail.com</p>
                         </div>
                     </a>
@@ -327,7 +335,7 @@
                         </div>
                         <div class="contact-info">
                             <h4>LinkedIn</h4>
-                            <p>Connect with me</p>
+                            <p data-i18n="contact.linkedinText">Connect with me</p>
                         </div>
                     </a>
                 </div>
@@ -339,7 +347,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 Kennedy Souza. Crafted with <ion-icon name="heart"></ion-icon> and code.</p>
+                <p>&copy; 2024 Kennedy Souza. <span data-i18n="footer.text">Crafted with</span> <ion-icon name="heart"></ion-icon> <span data-i18n="footer.and">and code</span>.</p>
                 <div class="footer-links">
                     <a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank">
                         <ion-icon name="logo-linkedin"></ion-icon>
