@@ -1,37 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kennedy Souza | Full-Stack Developer</title>
+    <title>Kennedev | Desenvolvimento de Sites, Softwares e Soluções em Tecnologia</title>
+    <meta name="description" content="Kennedev - Empresa especializada em desenvolvimento de sites, softwares e soluções tecnológicas para empresas que desejam transformar seus negócios.">
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">    
-
-    <!-- Dev Icons Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-
-    <!-- Project CSS-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">Kennedy<span class="gradient-text">.</span></div>
+            <a href="#home" class="nav-logo">Kennedev<span class="gradient-text">.</span></a>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
-                <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
-                <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
-                <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
-                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="#home" class="nav-link">Início</a></li>
+                <li><a href="#services" class="nav-link">Serviços</a></li>
+                <li><a href="#projects" class="nav-link">Projetos</a></li>
+                <li><a href="nossa-historia.html" class="nav-link">Nossa História</a></li>
+                <li><a href="#contact" class="nav-link">Contato</a></li>
             </ul>
-            <button class="language-toggle" id="languageToggle">
-                <span class="lang-icon">🌐</span>
-                <span class="lang-text">EN</span>
-            </button>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -45,47 +37,22 @@
         <div class="hero-bg">
             <div class="gradient-orb orb-1"></div>
             <div class="gradient-orb orb-2"></div>
-            <div class="gradient-orb orb-3"></div>
         </div>
         <div class="hero-content">
             <div class="hero-text fade-in">
-                <p class="hero-greeting" data-i18n="hero.greeting">👋 Hello, I'm</p>
-                <h1 class="hero-title">Kennedy Souza</h1>
-                <h2 class="hero-subtitle" data-i18n="hero.subtitle">Full-Stack Developer</h2>
-                <p class="hero-description"><span data-i18n="hero.description">Transforming ideas into elegant digital solutions with</span> <span class="gradient-text" data-i18n="hero.years">12+ years</span> <span data-i18n="hero.descriptionEnd">of expertise</span></p>
+                <p class="hero-greeting">Soluções em tecnologia para o seu negócio</p>
+                <h1 class="hero-title">Kennedev</h1>
+                <h2 class="hero-subtitle">Sites, Softwares e Soluções Digitais</h2>
+                <p class="hero-description">Desenvolvemos soluções tecnológicas sob medida para empresas que desejam otimizar processos, aumentar vendas e consolidar sua presença digital.</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">
-                        <span data-i18n="hero.viewWork">View My Work</span>
+                        Conheça Nossos Projetos
                         <ion-icon name="arrow-forward-outline"></ion-icon>
                     </a>
                     <a href="#contact" class="btn btn-secondary">
-                        <span data-i18n="hero.getInTouch">Get In Touch</span>
+                        Solicitar Orçamento
                         <ion-icon name="mail-outline"></ion-icon>
                     </a>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank" class="social-icon" aria-label="LinkedIn">
-                        <ion-icon name="logo-linkedin"></ion-icon>
-                    </a>
-                    <a href="mailto:kennedysantossouza@hotmail.com" class="social-icon" aria-label="Email">
-                        <ion-icon name="mail-outline"></ion-icon>
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image fade-in">
-                <div class="profile-card">
-                    <div class="profile-img-wrapper">
-                        <img src="img/profile_photo.jpeg" alt="Kennedy Souza" class="profile-img">
-                        <div class="profile-ring"></div>
-                    </div>
-                    <div class="floating-badge badge-1">
-                        <ion-icon name="code-slash-outline"></ion-icon>
-                        <span>12+ Years</span>
-                    </div>
-                    <div class="floating-badge badge-2">
-                        <ion-icon name="rocket-outline"></ion-icon>
-                        <span>Full-Stack</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -100,58 +67,75 @@
             <div class="stats-grid">
                 <div class="stat-card reveal">
                     <div class="stat-icon">
-                        <ion-icon name="code-working-outline"></ion-icon>
+                        <ion-icon name="time-outline"></ion-icon>
                     </div>
                     <h3 class="stat-number" data-target="12">0</h3>
-                    <p class="stat-label" data-i18n="stats.yearsExperience">Years Experience</p>
+                    <p class="stat-label">Anos de Experiência</p>
                 </div>
                 <div class="stat-card reveal">
                     <div class="stat-icon">
-                        <ion-icon name="briefcase-outline"></ion-icon>
+                        <ion-icon name="business-outline"></ion-icon>
                     </div>
-                    <h3 class="stat-number" data-target="50">0</h3>
-                    <p class="stat-label" data-i18n="stats.projectsCompleted">Projects Completed</p>
+                    <h3 class="stat-number" data-target="3">0</h3>
+                    <p class="stat-label">Projetos em Destaque</p>
                 </div>
                 <div class="stat-card reveal">
                     <div class="stat-icon">
-                        <ion-icon name="trophy-outline"></ion-icon>
+                        <ion-icon name="code-slash-outline"></ion-icon>
                     </div>
                     <h3 class="stat-number" data-target="15">0</h3>
-                    <p class="stat-label" data-i18n="stats.technologiesMastered">Technologies Mastered</p>
+                    <p class="stat-label">Tecnologias Aplicadas</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- CEO Card Section -->
+    <section class="ceo-section">
+        <div class="container">
+            <a href="nossa-historia.html" class="ceo-card reveal">
+                <div class="ceo-card-content">
+                    <div class="ceo-image-wrapper">
+                        <img src="img/profile_photo.jpeg" alt="Kennedy Souza - CEO e Fundador da Kennedev" class="ceo-image">
+                    </div>
+                    <div class="ceo-info">
+                        <span class="ceo-tag">Liderança</span>
+                        <h3 class="ceo-title">Sobre o CEO</h3>
+                        <p class="ceo-description">Kennedy Souza, fundador da Kennedev, traz mais de 12 anos de experiência em desenvolvimento de software. Especialista em criar soluções escaláveis e inovadoras para empresas de todos os portes.</p>
+                        <span class="ceo-link">Conheça nossa história <ion-icon name="arrow-forward-outline"></ion-icon></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="about">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag" data-i18n="about.tag">Get to know me</span>
-                <h2 class="section-title" data-i18n="about.title">About Me</h2>
+                <span class="section-tag">O que fazemos</span>
+                <h2 class="section-title">Nossos Serviços</h2>
             </div>
             <div class="about-content">
                 <div class="about-text reveal">
-                    <p class="about-paragraph" data-i18n="about.paragraph1">I have over 12 years of experience in software development, focusing on creating scalable, secure, and sustainable web applications. I work primarily with Ruby on Rails, PostgreSQL, Sidekiq, and Svelte, in addition to managing infrastructure on AWS (EC2, S3, RDS, CloudWatch).</p>
+                    <p class="about-paragraph">A Kennedev é uma empresa de desenvolvimento de sites, softwares e soluções tecnológicas para empresas que desejam transformar seus negócios. Oferecemos projetos sob medida, desde sites institucionais até plataformas SaaS completas.</p>
                     
-                    <p class="about-paragraph" data-i18n="about.paragraph2">I have solid experience in API architecture, integrations with external services, background jobs, deployment automation, and observability (monitoring and metrics). In my workflow, I prioritize automated testing (RSpec), rigorous code review, CI/CD (GitHub Actions and AWS pipelines), and best practices for versioning and security.</p>
-                    
-                    <p class="about-paragraph" data-i18n="about.paragraph3">One of the most relevant projects was at Santander, where I modernized a legacy cash flow control system — originally in Microsoft Access — transforming it into an integrated, lightweight, and highly reliable web application. The project increased operational productivity and reduced failures in manual processes.</p>
-                    
-                    <p class="about-paragraph" data-i18n="about.paragraph4">Currently, I am dedicated to backend engineering with Rails, focusing on scalability, automation, and system integration, always seeking to balance technical quality, delivery speed, and product impact.</p>
-                    
-                    <div class="about-highlights">
+                    <div class="about-highlights services-highlights">
                         <div class="highlight-item">
-                            <ion-icon name="checkmark-circle-outline"></ion-icon>
-                            <span data-i18n="about.highlight1">Backend Engineering</span>
+                            <ion-icon name="globe-outline"></ion-icon>
+                            <span>Sites Institucionais e Corporativos</span>
                         </div>
                         <div class="highlight-item">
-                            <ion-icon name="checkmark-circle-outline"></ion-icon>
-                            <span data-i18n="about.highlight2">System Integration</span>
+                            <ion-icon name="desktop-outline"></ion-icon>
+                            <span>Desenvolvimento de Softwares Personalizados</span>
                         </div>
                         <div class="highlight-item">
-                            <ion-icon name="checkmark-circle-outline"></ion-icon>
-                            <span data-i18n="about.highlight3">AWS Infrastructure</span>
+                            <ion-icon name="cloud-outline"></ion-icon>
+                            <span>Plataformas SaaS e Sistemas Web</span>
+                        </div>
+                        <div class="highlight-item">
+                            <ion-icon name="construct-outline"></ion-icon>
+                            <span>Integrações e Automação de Processos</span>
                         </div>
                     </div>
                 </div>
@@ -159,89 +143,57 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Technologies Section -->
     <section id="skills" class="skills">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag" data-i18n="skills.tag">What I do</span>
-                <h2 class="section-title" data-i18n="skills.title">My Skills</h2>
+                <span class="section-tag">Tecnologias</span>
+                <h2 class="section-title">Com Que Trabalhamos</h2>
             </div>
             <div class="skills-grid">
                 <div class="skill-category reveal">
                     <div class="skill-header">
                         <ion-icon name="desktop-outline"></ion-icon>
-                        <h3 data-i18n="skills.frontend">Front-End</h3>
+                        <h3>Front-End</h3>
                     </div>
                     <div class="skill-icons">
-                        <div class="skill-item" data-skill="HTML5">
-                    <i class="devicon-html5-plain colored"></i>
-                        </div>
-                        <div class="skill-item" data-skill="CSS3">
-                    <i class="devicon-css3-plain colored"></i>
-                        </div>
-                        <div class="skill-item" data-skill="JavaScript">
-                    <i class="devicon-javascript-plain colored"></i>
-                        </div>
-                        <div class="skill-item" data-skill="jQuery">
-                    <i class="devicon-jquery-plain colored"></i>
-                        </div>
-                        <div class="skill-item" data-skill="Svelte">
-                            <i class="devicon-svelte-plain colored"></i>
-                        </div>
+                        <div class="skill-item" data-skill="HTML5"><i class="devicon-html5-plain colored"></i></div>
+                        <div class="skill-item" data-skill="CSS3"><i class="devicon-css3-plain colored"></i></div>
+                        <div class="skill-item" data-skill="JavaScript"><i class="devicon-javascript-plain colored"></i></div>
+                        <div class="skill-item" data-skill="Svelte"><i class="devicon-svelte-plain colored"></i></div>
                     </div>
                 </div>
-
                 <div class="skill-category reveal">
                     <div class="skill-header">
                         <ion-icon name="server-outline"></ion-icon>
-                        <h3 data-i18n="skills.backend">Back-End</h3>
+                        <h3>Back-End</h3>
                     </div>
                     <div class="skill-icons">
-                        <div class="skill-item" data-skill="PHP">
-                    <i class="devicon-php-plain colored"></i>
-                        </div>
-                        <div class="skill-item" data-skill="Python">
-                    <i class="devicon-python-plain colored"></i>
-                        </div>
-                        <div class="skill-item" data-skill="Ruby">
-                    <i class="devicon-ruby-plain colored"></i>
-                        </div>
-                        <div class="skill-item" data-skill="Node.js">
-                    <i class="devicon-nodejs-plain colored"></i>
-                        </div>
-                        <div class="skill-item" data-skill="Rails">
-                            <i class="devicon-rails-plain colored"></i>
-                        </div>
-                        <div class="skill-item" data-skill="GraphQL">
-                    <i class="devicon-graphql-plain colored"></i>
-                        </div>
+                        <div class="skill-item" data-skill="Ruby"><i class="devicon-ruby-plain colored"></i></div>
+                        <div class="skill-item" data-skill="Rails"><i class="devicon-rails-plain colored"></i></div>
+                        <div class="skill-item" data-skill="Node.js"><i class="devicon-nodejs-plain colored"></i></div>
+                        <div class="skill-item" data-skill="PHP"><i class="devicon-php-plain colored"></i></div>
+                        <div class="skill-item" data-skill="Python"><i class="devicon-python-plain colored"></i></div>
                     </div>
                 </div>
-
                 <div class="skill-category reveal">
                     <div class="skill-header">
                         <ion-icon name="server-outline"></ion-icon>
-                        <h3 data-i18n="skills.databases">Databases</h3>
+                        <h3>Banco de Dados</h3>
                     </div>
                     <div class="skill-icons">
-                        <div class="skill-item" data-skill="MySQL">
-                    <i class="devicon-mysql-plain colored"></i>
-                        </div>
-                        <div class="skill-item" data-skill="PostgreSQL">
-                    <i class="devicon-postgresql-plain colored"></i>
-                        </div>
+                        <div class="skill-item" data-skill="PostgreSQL"><i class="devicon-postgresql-plain colored"></i></div>
+                        <div class="skill-item" data-skill="MySQL"><i class="devicon-mysql-plain colored"></i></div>
                     </div>
                 </div>
-
                 <div class="skill-category reveal">
                     <div class="skill-header">
                         <ion-icon name="construct-outline"></ion-icon>
-                        <h3 data-i18n="skills.devops">Tools & DevOps</h3>
+                        <h3>DevOps & Infra</h3>
                     </div>
                     <div class="skill-icons">
-                        <div class="skill-item" data-skill="Docker">
-                            <i class="devicon-docker-plain colored"></i>
-                        </div>
+                        <div class="skill-item" data-skill="Docker"><i class="devicon-docker-plain colored"></i></div>
+                        <div class="skill-item" data-skill="AWS"><i class="devicon-amazonwebservices-plain colored"></i></div>
                     </div>
                 </div>
             </div>
@@ -252,90 +204,99 @@
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag" data-i18n="projects.tag">My work</span>
-                <h2 class="section-title" data-i18n="projects.title">Featured Projects</h2>
+                <span class="section-tag">Portfólio</span>
+                <h2 class="section-title">Projetos Realizados</h2>
             </div>
             <div class="projects-grid">
-                <div class="project-card reveal">
+                <!-- Aizaph - Destaque SaaS -->
+                <a href="https://aizaph.com.br" target="_blank" rel="noopener" class="project-card project-featured reveal">
+                    <div class="project-badge">Plataforma SaaS</div>
                     <div class="project-image">
+                        <img src="img/aizaph.png" alt="Screenshot da plataforma Aizaph">
                         <div class="project-overlay">
-                            <ion-icon name="eye-outline"></ion-icon>
+                            <ion-icon name="open-outline"></ion-icon>
+                            <span>Visitar site</span>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title" data-i18n="projects.project1.title">Santander Cash Flow System</h3>
-                        <p class="project-description" data-i18n="projects.project1.description">Modernized a legacy Access system into a dynamic web application, integrating multiple operational systems into a unified platform.</p>
+                        <h3 class="project-title">Aizaph</h3>
+                        <p class="project-description">Plataforma SaaS de IA humanizada para atendimento e vendas 24/7. Unifica atendimento, automação e métricas em um fluxo único. Integra WhatsApp, Messenger e canais diretos.</p>
                         <div class="project-tags">
-                            <span class="tag" data-i18n="projects.project1.tag1">Web App</span>
-                            <span class="tag" data-i18n="projects.project1.tag2">Integration</span>
-                            <span class="tag" data-i18n="projects.project1.tag3">Finance</span>
+                            <span class="tag tag-saas">SaaS</span>
+                            <span class="tag">IA Humanizada</span>
+                            <span class="tag">Atendimento 24/7</span>
                         </div>
+                        <p class="project-url">aizaph.com.br</p>
                     </div>
-                </div>
+                </a>
 
-                <div class="project-card reveal">
+                <a href="https://abaty.com.br" target="_blank" rel="noopener" class="project-card reveal">
                     <div class="project-image">
+                        <img src="img/abaty.png" alt="Screenshot do site Abaty">
                         <div class="project-overlay">
-                            <ion-icon name="eye-outline"></ion-icon>
+                            <ion-icon name="open-outline"></ion-icon>
+                            <span>Visitar site</span>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title" data-i18n="projects.project2.title">E-Commerce Platform</h3>
-                        <p class="project-description" data-i18n="projects.project2.description">Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.</p>
+                        <h3 class="project-title">Abaty</h3>
+                        <p class="project-description">Site institucional desenvolvido para apresentação da marca e serviços da empresa com design profissional e responsivo.</p>
                         <div class="project-tags">
-                            <span class="tag" data-i18n="projects.project2.tag1">E-Commerce</span>
-                            <span class="tag" data-i18n="projects.project2.tag2">Full-Stack</span>
-                            <span class="tag" data-i18n="projects.project2.tag3">Payment</span>
+                            <span class="tag">Site Institucional</span>
+                            <span class="tag">Responsivo</span>
                         </div>
+                        <p class="project-url">abaty.com.br</p>
                     </div>
-                </div>
+                </a>
 
-                <div class="project-card reveal">
+                <a href="https://agleilsonrodrigues.com.br" target="_blank" rel="noopener" class="project-card reveal">
                     <div class="project-image">
+                        <img src="img/agleilson.png" alt="Screenshot do site Agleilson Rodrigues">
                         <div class="project-overlay">
-                            <ion-icon name="eye-outline"></ion-icon>
+                            <ion-icon name="open-outline"></ion-icon>
+                            <span>Visitar site</span>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title" data-i18n="projects.project3.title">CRM System</h3>
-                        <p class="project-description" data-i18n="projects.project3.description">Custom CRM solution with advanced analytics, customer tracking, and automated workflows.</p>
+                        <h3 class="project-title">Agleilson Rodrigues</h3>
+                        <p class="project-description">Website profissional com identidade visual personalizada para destacar os serviços e contato do profissional.</p>
                         <div class="project-tags">
-                            <span class="tag" data-i18n="projects.project3.tag1">CRM</span>
-                            <span class="tag" data-i18n="projects.project3.tag2">Analytics</span>
-                            <span class="tag" data-i18n="projects.project3.tag3">Automation</span>
+                            <span class="tag">Site Profissional</span>
+                            <span class="tag">Portfólio</span>
                         </div>
+                        <p class="project-url">agleilsonrodrigues.com.br</p>
                     </div>
-                </div>
-                </div>
+                </a>
             </div>
-        </section>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag" data-i18n="contact.tag">Let's connect</span>
-                <h2 class="section-title" data-i18n="contact.title">Get In Touch</h2>
+                <span class="section-tag">Vamos conversar</span>
+                <h2 class="section-title">Entre em Contato</h2>
             </div>
             <div class="contact-content reveal">
-                <p class="contact-description" data-i18n="contact.description">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                <p class="contact-description">Tem um projeto em mente? Entre em contato e receba um orçamento personalizado para sua empresa.</p>
                 <div class="contact-methods">
                     <a href="mailto:kennedysantossouza@hotmail.com" class="contact-card">
                         <div class="contact-icon">
                             <ion-icon name="mail-outline"></ion-icon>
                         </div>
                         <div class="contact-info">
-                            <h4 data-i18n="contact.emailLabel">Email</h4>
+                            <h4>E-mail</h4>
                             <p>kennedysantossouza@hotmail.com</p>
                         </div>
                     </a>
-                    <a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank" class="contact-card">
+                    <a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank" rel="noopener" class="contact-card">
                         <div class="contact-icon">
                             <ion-icon name="logo-linkedin"></ion-icon>
                         </div>
                         <div class="contact-info">
                             <h4>LinkedIn</h4>
-                            <p data-i18n="contact.linkedinText">Connect with me</p>
+                            <p>Conecte-se conosco</p>
                         </div>
                     </a>
                 </div>
@@ -347,9 +308,9 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 Kennedy Souza. <span data-i18n="footer.text">Crafted with</span> <ion-icon name="heart"></ion-icon> <span data-i18n="footer.and">and code</span>.</p>
+                <p>&copy; 2025 Kennedev. Desenvolvido com profissionalismo e dedicação.</p>
                 <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank">
+                    <a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank" rel="noopener" aria-label="LinkedIn">
                         <ion-icon name="logo-linkedin"></ion-icon>
                     </a>
                 </div>
@@ -357,10 +318,8 @@
         </div>
     </footer>
 
-    <!-- Ion Icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
     <script src="js/index.js"></script>
 </body>
 </html>
