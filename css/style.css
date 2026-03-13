@@ -80,8 +80,8 @@ body {
 
 .nav-logo {
     font-size: 1.5rem;
-    font-weight: 700;
-    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    font-family: 'AnkaCoderRegular', 'Courier New', monospace;
     color: var(--text-primary);
 }
 
