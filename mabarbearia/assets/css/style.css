@@ -176,6 +176,56 @@
   transform: translate(-4px, -4px);
 }
 
+/* ── Pricing CTA buttons ── */
+.pricing-cta-btns {
+  display: flex;
+  gap: 12px;
+  margin-top: 40px;
+  flex-wrap: nowrap;
+}
+
+.pricing-cta-btn {
+  flex: 1;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  white-space: nowrap;
+  padding: 16px 18px !important;
+}
+
+.pricing-cta-btn i {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.pricing-cta-btn--outline {
+  background: transparent !important;
+  border: 2px solid #d19f68 !important;
+  color: #d19f68 !important;
+}
+
+.pricing-cta-btn--outline::before {
+  background: #d19f68 !important;
+}
+
+@media (max-width: 575px) {
+  .pricing-cta-btns {
+    gap: 8px;
+  }
+
+  .pricing-cta-btn {
+    font-size: 12px !important;
+    padding: 14px 10px !important;
+    letter-spacing: 0.5px;
+  }
+
+  .pricing-cta-btn i {
+    font-size: 14px;
+  }
+}
+
 /* ── Services mobile carousel ── */
 @media (max-width: 767px) {
   /* Allow cards to bleed slightly past the container edge (peek effect) */
