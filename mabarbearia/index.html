@@ -183,7 +183,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="services-caption text-center mb-30">
                             <div class="service-icon">
-                                <i class="flaticon-healthcare-and-medical"></i>
+                                <img decoding="async" width="64" height="64" src="https://mabarbearia.com.br/wp-content/uploads/2024/06/haircut.png" alt="Corte de Cabelo">
                             </div> 
                             <div class="service-cap">
                                 <h4><a href="#">Corte de Cabelo</a></h4>
@@ -194,7 +194,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="services-caption active text-center mb-30">
                             <div class="service-icon">
-                                <i class="flaticon-fitness"></i>
+                                <img decoding="async" width="64" height="64" src="https://mabarbearia.com.br/wp-content/uploads/2024/06/razor.png" alt="Barba">
                             </div> 
                             <div class="service-cap">
                                 <h4><a href="#">Barba</a></h4>
@@ -205,7 +205,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="services-caption text-center mb-30">
                             <div class="service-icon">
-                                <i class="flaticon-clock"></i>
+                                <img loading="lazy" decoding="async" width="64" height="64" src="https://mabarbearia.com.br/wp-content/uploads/2024/06/brush.png" alt="Barboterapia">
                             </div> 
                             <div class="service-cap">
                                 <h4><a href="#">Barboterapia</a></h4>
@@ -216,7 +216,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="services-caption text-center mb-30">
                             <div class="service-icon">
-                                <i class="flaticon-healthcare-and-medical"></i>
+                                <img loading="lazy" decoding="async" width="64" height="64" src="https://mabarbearia.com.br/wp-content/uploads/2024/06/trimmer2.png" alt="Depilação de Nariz">
                             </div> 
                             <div class="service-cap">
                                 <h4><a href="#">Depilação de Nariz</a></h4>
@@ -227,7 +227,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="services-caption text-center mb-30">
                             <div class="service-icon">
-                                <i class="flaticon-fitness"></i>
+                                <img loading="lazy" decoding="async" width="64" height="64" src="https://mabarbearia.com.br/wp-content/uploads/2024/06/massage-oil.png" alt="Limpeza Facial">
                             </div> 
                             <div class="service-cap">
                                 <h4><a href="#">Limpeza Facial</a></h4>
@@ -238,7 +238,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="services-caption text-center mb-30">
                             <div class="service-icon">
-                                <i class="flaticon-clock"></i>
+                                <img loading="lazy" decoding="async" width="64" height="64" src="https://mabarbearia.com.br/wp-content/uploads/2024/06/comb.png" alt="Progressiva">
                             </div> 
                             <div class="service-cap">
                                 <h4><a href="#">Progressiva</a></h4>
@@ -613,6 +613,43 @@
     <!-- Jquery Plugins, main Jquery -->	
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
+
+    <!-- Scroll-spy: atualiza item ativo no menu conforme seção visível -->
+    <script>
+    (function () {
+      var sectionIds = ['inicio', 'servicos', 'precos', 'equipe', 'contato'];
+      var HEADER_H = 110; // altura do header fixo
+
+      function getActiveSection() {
+        var scrollY = window.scrollY + HEADER_H;
+        var active = sectionIds[0];
+        sectionIds.forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el && el.offsetTop <= scrollY) active = id;
+        });
+        return active;
+      }
+
+      function updateNav() {
+        var active = getActiveSection();
+        document.querySelectorAll('#navigation li').forEach(function (li) {
+          li.classList.remove('active');
+        });
+        var link = document.querySelector('#navigation li a[href="#' + active + '"]');
+        if (link) link.parentElement.classList.add('active');
+
+        // Atualiza também o menu mobile (slicknav clona os itens)
+        document.querySelectorAll('.slicknav_nav li').forEach(function (li) {
+          li.classList.remove('active');
+        });
+        var mLink = document.querySelector('.slicknav_nav li a[href="#' + active + '"]');
+        if (mLink) mLink.parentElement.classList.add('active');
+      }
+
+      window.addEventListener('scroll', updateNav, { passive: true });
+      window.addEventListener('load', updateNav);
+    })();
+    </script>
     
     </body>
 </html>
