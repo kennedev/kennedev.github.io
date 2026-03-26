@@ -618,15 +618,36 @@
     <script>
     (function () {
       var sectionIds = ['inicio', 'servicos', 'precos', 'equipe', 'contato'];
-      var HEADER_H = 110; // altura do header fixo
+      var HEADER_H = 100; // deve acompanhar o scroll-padding-top do CSS
+
+      function getOrderedSections() {
+        return sectionIds
+          .map(function (id) {
+            return document.getElementById(id);
+          })
+          .filter(function (el) {
+            return !!el;
+          })
+          .sort(function (a, b) {
+            return a.offsetTop - b.offsetTop;
+          });
+      }
 
       function getActiveSection() {
-        var scrollY = window.scrollY + HEADER_H;
-        var active = sectionIds[0];
-        sectionIds.forEach(function (id) {
-          var el = document.getElementById(id);
-          if (el && el.offsetTop <= scrollY) active = id;
-        });
+        var sections = getOrderedSections();
+        if (!sections.length) return sectionIds[0];
+
+        var marker = window.scrollY + HEADER_H + 1;
+        var active = sections[0].id;
+
+        for (var i = 0; i < sections.length; i++) {
+          if (sections[i].offsetTop <= marker) {
+            active = sections[i].id;
+          } else {
+            break;
+          }
+        }
+
         return active;
       }
 
@@ -646,8 +667,27 @@
         if (mLink) mLink.parentElement.classList.add('active');
       }
 
+      function bindNavClickSync() {
+        document.addEventListener('click', function (evt) {
+          var link = evt.target.closest('a[href^="#"]');
+          if (!link) return;
+
+          var target = link.getAttribute('href');
+          if (!target || target.length < 2) return;
+          var targetId = target.slice(1);
+          if (sectionIds.indexOf(targetId) === -1) return;
+
+          // Marca imediatamente no clique e confirma após o smooth scroll iniciar.
+          setTimeout(updateNav, 0);
+          setTimeout(updateNav, 300);
+        });
+      }
+
       window.addEventListener('scroll', updateNav, { passive: true });
       window.addEventListener('load', updateNav);
+      window.addEventListener('resize', updateNav);
+      window.addEventListener('hashchange', updateNav);
+      bindNavClickSync();
     })();
     </script>
     
