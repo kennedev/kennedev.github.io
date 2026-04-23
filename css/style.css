@@ -28,8 +28,14 @@
 
 /* ===== BASE STYLES ===== */
 html {
-    scroll-behavior: smooth;
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    html {
+        scroll-behavior: smooth;
+    }
 }
 
 body {
@@ -38,6 +44,10 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+body.nav-lock {
+    overflow: hidden;
 }
 
 .container {
@@ -1147,6 +1157,7 @@ body {
 }
 
 @media (max-width: 768px) {
+    /* Navigation */
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -1155,22 +1166,45 @@ body {
         background: rgba(15, 23, 42, 0.98);
         backdrop-filter: blur(10px);
         width: 100%;
+        height: calc(100vh - 70px);
         text-align: center;
-        transition: 0.3s;
+        transition: left 0.35s cubic-bezier(0.22, 1, 0.36, 1);
         padding: 2rem 0;
         gap: 0;
+        overflow-y: auto;
     }
 
     .nav-menu li {
         padding: 1rem 0;
+        opacity: 0;
+        transform: translateY(-8px);
+        transition: opacity 0.35s ease, transform 0.35s ease;
     }
 
     .nav-menu.active {
         left: 0;
     }
 
+    .nav-menu.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-menu.active li:nth-child(1) { transition-delay: 0.08s; }
+    .nav-menu.active li:nth-child(2) { transition-delay: 0.14s; }
+    .nav-menu.active li:nth-child(3) { transition-delay: 0.2s; }
+    .nav-menu.active li:nth-child(4) { transition-delay: 0.26s; }
+    .nav-menu.active li:nth-child(5) { transition-delay: 0.32s; }
+
     .hamburger {
         display: flex;
+        padding: 0.5rem;
+        min-width: 44px;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: none;
     }
 
     .language-toggle {
@@ -1191,8 +1225,22 @@ body {
         transform: rotate(-45deg) translate(7px, -7px);
     }
 
+    /* Hero */
     .hero {
-        padding: 6rem 0 3rem;
+        padding: 5rem 0 2.5rem;
+        min-height: auto;
+    }
+
+    .hero-greeting {
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 90%;
+        margin-bottom: 2rem;
     }
 
     .profile-img-wrapper {
@@ -1205,44 +1253,171 @@ body {
         padding: 0.5rem 1rem;
     }
 
-    .badge-1 {
-        right: 0;
-    }
+    .badge-1 { right: 0; }
+    .badge-2 { left: 0; }
 
-    .badge-2 {
-        left: 0;
-    }
-
+    /* Hero buttons */
     .hero-buttons {
         flex-direction: column;
         width: 100%;
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 0.75rem;
     }
 
     .btn {
         width: 100%;
         justify-content: center;
+        padding: 0.9rem 1.5rem;
+        border-radius: 14px;
     }
 
-    .stats-grid {
-        grid-template-columns: 1fr;
+    /* Scroll indicator redundante em touch */
+    .scroll-indicator {
+        display: none;
+    }
+
+    /* Orbs: reduzir custo em mobile */
+    .orb-1 {
+        width: 280px;
+        height: 280px;
+        top: -120px;
+        right: -60px;
+    }
+
+    .orb-2 {
+        width: 240px;
+        height: 240px;
+        bottom: -100px;
+        left: -60px;
+    }
+
+    .gradient-orb {
+        filter: blur(80px);
+        opacity: 0.35;
+    }
+
+    /* Ritmo vertical das seções */
+    .about,
+    .skills,
+    .projects,
+    .contact {
+        padding: 4rem 0;
+    }
+
+    .ceo-section,
+    .stats {
+        padding: 3rem 0;
+    }
+
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+
+    /* About */
+    .about-paragraph {
+        font-size: 1rem;
+        line-height: 1.7;
     }
 
     .about-highlights {
         grid-template-columns: 1fr;
+        margin-top: 2rem;
     }
 
+    /* Stats */
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-number {
+        font-size: clamp(2.25rem, 8vw, 2.75rem);
+    }
+
+    .stat-card {
+        padding: 1.75rem 1.5rem;
+    }
+
+    /* CEO card */
+    .ceo-card {
+        padding: 1.5rem;
+    }
+
+    .ceo-card-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.25rem;
+    }
+
+    .ceo-image-wrapper {
+        width: 110px;
+        height: 110px;
+    }
+
+    .ceo-info {
+        text-align: center;
+        min-width: 0;
+    }
+
+    .ceo-link {
+        justify-content: center;
+    }
+
+    /* Skills */
     .skills-grid {
         grid-template-columns: 1fr;
     }
 
+    .skill-category {
+        padding: 1.5rem;
+    }
+
+    /* Projects */
     .projects-grid {
         grid-template-columns: 1fr;
     }
 
+    .project-content {
+        padding: 1.5rem;
+    }
+
+    .project-badge {
+        top: 0.75rem;
+        right: 0.75rem;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+    }
+
+    /* Contact */
     .contact-methods {
         grid-template-columns: 1fr;
     }
 
+    .contact-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .contact-icon {
+        width: 52px;
+        height: 52px;
+    }
+
+    .contact-icon ion-icon {
+        font-size: 1.6rem;
+    }
+
+    /* Founder card (Nossa História) */
+    .founder-card {
+        gap: 1.5rem;
+    }
+
+    /* Footer */
     .footer-content {
         flex-direction: column;
         text-align: center;
@@ -1266,8 +1441,20 @@ body {
         font-size: 1.5rem;
     }
 
+    .hero-greeting {
+        font-size: 0.9rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
     .section-title {
         font-size: 2rem;
+    }
+
+    .about-paragraph {
+        font-size: 0.95rem;
     }
 
     .profile-img-wrapper {
@@ -1296,6 +1483,106 @@ body {
 
     .founder-bio {
         text-align: center;
+    }
+}
+
+/* ===== TOUCH-FIRST INTERACTIONS ===== */
+@media (hover: none) {
+    /* Remover estados "presos" depois do tap */
+    .stat-card:hover,
+    .skill-category:hover,
+    .project-card:hover,
+    .contact-card:hover,
+    .ceo-card:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .social-icon:hover,
+    .language-toggle:hover,
+    .footer-links a:hover,
+    .skill-item:hover {
+        transform: none;
+    }
+
+    /* Indicador permanente de link externo nos projetos */
+    .project-overlay {
+        opacity: 1;
+        inset: auto 0.75rem 0.75rem auto;
+        background: rgba(15, 23, 42, 0.85);
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(99, 102, 241, 0.45);
+        border-radius: 999px;
+        padding: 0.35rem 0.75rem;
+        flex-direction: row;
+        gap: 0.35rem;
+        pointer-events: none;
+    }
+
+    .project-overlay ion-icon {
+        font-size: 1rem;
+    }
+
+    .project-overlay span {
+        font-size: 0.75rem;
+        font-weight: 500;
+    }
+
+    /* Label sempre visível nas skills */
+    .skill-icons {
+        gap: 1.75rem 1.25rem;
+    }
+
+    .skill-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    .skill-item::after {
+        position: static;
+        transform: none;
+        opacity: 1;
+        background: transparent;
+        padding: 0;
+        color: var(--text-muted);
+        font-size: 0.7rem;
+        letter-spacing: 0.3px;
+    }
+}
+
+/* ===== TAP FEEDBACK (ACTIVE STATES) ===== */
+.btn:active,
+.project-card:active,
+.contact-card:active,
+.ceo-card:active,
+.stat-card:active,
+.skill-category:active,
+.language-toggle:active,
+.social-icon:active,
+.footer-links a:active,
+.whatsapp-float:active {
+    transform: scale(0.98);
+    transition: transform 120ms ease;
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .gradient-orb,
+    .scroll-indicator,
+    .whatsapp-float,
+    .whatsapp-float::before,
+    .profile-ring {
+        animation: none !important;
     }
 }
 

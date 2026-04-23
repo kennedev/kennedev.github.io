@@ -3,20 +3,33 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 
-// Toggle mobile menu
+const setMenuState = (isOpen) => {
+    if (!hamburger || !navMenu) return;
+    hamburger.classList.toggle('active', isOpen);
+    navMenu.classList.toggle('active', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    hamburger.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+    document.body.classList.toggle('nav-lock', isOpen);
+};
+
 if (hamburger) {
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
+        const isOpen = !navMenu.classList.contains('active');
+        setMenuState(isOpen);
     });
 }
 
-// Close mobile menu when clicking on a link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        hamburger?.classList.remove('active');
-        navMenu?.classList.remove('active');
+        setMenuState(false);
     });
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu?.classList.contains('active')) {
+        setMenuState(false);
+        hamburger?.focus();
+    }
 });
 
 // ===== SMOOTH SCROLL (apenas para âncoras na mesma página) =====
@@ -186,11 +199,12 @@ const highlightNavigation = () => {
         const sectionTop = section.offsetTop - 100;
         const sectionId = section.getAttribute('id');
         const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+        if (!navLink) return;
 
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLink?.classList.add('active');
+            navLink.classList.add('nav-active');
         } else {
-            navLink?.classList.remove('active');
+            navLink.classList.remove('nav-active');
         }
     });
 };
@@ -205,11 +219,6 @@ window.addEventListener('load', () => {
         document.body.style.opacity = '1';
     }, 100);
 });
-
-// Nav link active state (scroll highlight)
-const style = document.createElement('style');
-style.textContent = `.nav-link.active::after { width: 100%; }`;
-document.head.appendChild(style);
 
 console.log('%c Kennedev ', 'color: #6366f1; font-size: 14px; font-weight: bold;');
 
