@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verbuz | Mayara Fotografia</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-black text-white">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-4 py-3" id="mainNav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="assets/img/logo_verbuz.png" alt="Verbuz Logo" height="50" class="me-2">
+                <span class="brand-text">VERBUZ</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfólio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-section d-flex align-items-center">
+        <div class="container text-center" data-aos="fade-up" data-aos-duration="1500">
+            <h1 class="display-1 fw-bold gold-text mb-3">VERBUZ</h1>
+            <p class="lead mb-5">Capturando a luz através do Verbo.</p>
+            <a href="#portfolio" class="btn btn-outline-gold btn-lg px-5 py-3">Ver Portfólio</a>
+        </div>
+    </header>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-4 gold-text">Portfólio</h2>
+                <div class="gold-line mx-auto"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="portfolio-item">
+                        <img src="assets/img/portfolio_1.jpg" class="img-fluid rounded shadow" alt="Retrato">
+                        <div class="portfolio-overlay">
+                            <h3>Retratos</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="portfolio-item">
+                        <img src="assets/img/portfolio_2.jpg" class="img-fluid rounded shadow" alt="Casamento">
+                        <div class="portfolio-overlay">
+                            <h3>Casamentos</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="portfolio-item">
+                        <img src="assets/img/portfolio_3.jpg" class="img-fluid rounded shadow" alt="Arquitetura">
+                        <div class="portfolio-overlay">
+                            <h3>Arquitetura</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-dark-accent">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <img src="assets/img/hero_photography.jpg" class="img-fluid rounded shadow-lg" alt="Mayara">
+                </div>
+                <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+                    <h2 class="display-4 gold-text mb-4">Mayara</h2>
+                    <p class="lead">Fundadora da Verbuz, Mayara une sua paixão pela fotografia com sua fé cristã.</p>
+                    <p>O nome <strong>Verbuz</strong> nasce da junção de <em>Verbo</em> e <em>Luz</em>. Para Mayara, fotografar é mais do que capturar imagens; é revelar a luz divina presente em cada momento e em cada pessoa.</p>
+                    <p>Com um olhar contemporâneo e sofisticado, ela busca a essência em cada clique, transformando o comum em extraordinário.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container py-5 text-center">
+            <div class="mb-5" data-aos="fade-up">
+                <h2 class="display-4 gold-text">Vamos Conversar?</h2>
+                <p>Transforme seus momentos em memórias eternas.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <form id="contactForm" class="text-start">
+                        <div class="mb-3">
+                            <input type="text" class="form-control bg-transparent text-white border-gold" placeholder="Seu Nome">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control bg-transparent text-white border-gold" placeholder="Seu E-mail">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control bg-transparent text-white border-gold" rows="4" placeholder="Sua Mensagem"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gold w-100 py-3">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 border-top border-gold text-center">
+        <p class="mb-0">&copy; 2026 Verbuz Photography. Todos os direitos reservados.</p>
+        <p class="small text-muted mt-2">Verbo + Luz</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

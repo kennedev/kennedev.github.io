@@ -1,0 +1,210 @@
+:root {
+    --gold: #C9A227;
+    --gold-light: #F1C40F;
+    --gold-deep: #8B6914;
+    --dark-gold: #7A5C12;
+    --black: #0A0A0A;
+    --dark-grey: #1A1A1A;
+    --gold-gradient: linear-gradient(135deg, #8B6914 0%, #C9A227 20%, #F4D03F 40%, #FFD700 50%, #F4D03F 60%, #C9A227 80%, #8B6914 100%);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    background-color: var(--black);
+}
+
+h1, h2, h3, .brand-text {
+    font-family: 'Playfair Display', serif;
+}
+
+.gold-text {
+    background: var(--gold-gradient);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 20px rgba(201, 162, 39, 0.3);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+    animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.border-gold {
+    border-color: var(--gold) !important;
+}
+
+.btn-gold {
+    background: var(--gold-gradient);
+    background-size: 200% auto;
+    color: var(--black);
+    border: none;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(201, 162, 39, 0.4);
+}
+
+.btn-gold:hover {
+    background-position: right center;
+    color: var(--black);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(201, 162, 39, 0.6);
+}
+
+.btn-outline-gold {
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    background: transparent;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-outline-gold:hover {
+    background: var(--gold-gradient);
+    background-size: 200% auto;
+    color: var(--black);
+    border-color: transparent;
+    box-shadow: 0 4px 20px rgba(201, 162, 39, 0.5);
+}
+
+/* Navbar */
+.navbar {
+    transition: all 0.5s ease;
+    background: transparent;
+}
+
+.navbar.scrolled {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 40px !important;
+    border-bottom: 1px solid var(--gold);
+}
+
+.brand-text {
+    background: var(--gold-gradient);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    animation: shimmer 4s linear infinite;
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 400;
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/hero_photography.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.gold-line {
+    width: 80px;
+    height: 3px;
+    background: var(--gold-gradient);
+    background-size: 200% auto;
+    margin-top: 15px;
+    border-radius: 2px;
+    box-shadow: 0 0 12px rgba(201, 162, 39, 0.6);
+    animation: shimmer 4s linear infinite;
+}
+
+/* Portfolio */
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.portfolio-item img {
+    transition: transform 0.8s ease;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.portfolio-overlay h3 {
+    background: var(--gold-gradient);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    transform: translateY(20px);
+    transition: transform 0.5s ease;
+    animation: shimmer 4s linear infinite;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-item:hover .portfolio-overlay h3 {
+    transform: translateY(0);
+}
+
+/* About */
+.bg-dark-accent {
+    background-color: var(--dark-grey);
+}
+
+/* Form */
+.form-control:focus {
+    background-color: transparent;
+    color: white;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+}
+
+/* Footer */
+footer {
+    background-color: var(--black);
+}
