@@ -1,0 +1,8 @@
+# Bloqueia acesso HTTP a arquivos sensíveis e listagem de diretórios.
+<FilesMatch "\.(sql)$">
+  Require all denied
+</FilesMatch>
+<FilesMatch "^config\.php$">
+  Require all denied
+</FilesMatch>
+Options -Indexes
