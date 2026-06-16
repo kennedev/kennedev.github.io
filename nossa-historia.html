@@ -5,30 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossa História | Kennedev</title>
     <meta name="description" content="Conheça a história da Kennedev e de Kennedy Souza, CEO e fundador. Mais de 12 anos transformando negócios com tecnologia.">
-    
+    <meta name="theme-color" content="#070b16">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/anka-coder" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">&lt;kennedev&gt;</a>
+            <a href="index.html" class="nav-logo" aria-label="Kennedev — início">
+                <span class="logo-mark" aria-hidden="true"></span>
+                <span class="logo-text">Kennedev</span>
+            </a>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="index.html#about" class="nav-link">Empresa</a></li>
                 <li><a href="index.html#services" class="nav-link">Serviços</a></li>
                 <li><a href="index.html#projects" class="nav-link">Projetos</a></li>
                 <li><a href="nossa-historia.html" class="nav-link nav-active">Nossa História</a></li>
                 <li><a href="index.html#contact" class="nav-link">Contato</a></li>
             </ul>
-            <button class="hamburger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-actions">
+                <a href="index.html#contact" class="btn btn-primary btn-sm nav-cta">Solicitar orçamento</a>
+                <button class="hamburger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -36,7 +43,7 @@
     <section class="page-hero">
         <div class="container">
             <h1 class="page-title">Nossa História</h1>
-            <p class="page-subtitle">A trajetória da Kennedev e o compromisso em transformar negócios com tecnologia</p>
+            <p class="page-subtitle">A trajetória da Kennedev e o compromisso de transformar negócios com tecnologia.</p>
         </div>
     </section>
 
@@ -70,8 +77,8 @@
             </div>
 
             <div class="history-cta reveal">
-                <a href="index.html#contact" class="btn btn-primary">
-                    Fale Conosco
+                <a href="index.html#contact" class="btn btn-primary btn-lg">
+                    Fale conosco
                     <ion-icon name="arrow-forward-outline"></ion-icon>
                 </a>
             </div>
@@ -81,13 +88,44 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Kennedev. Desenvolvido com profissionalismo e dedicação.</p>
-                <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                        <ion-icon name="logo-linkedin"></ion-icon>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <span class="logo-mark" aria-hidden="true"></span>
+                        <span class="logo-text">Kennedev</span>
                     </a>
+                    <p class="footer-tagline">Sites, softwares e soluções digitais sob medida para empresas que querem crescer com tecnologia.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                        <a href="https://wa.me/5511948825691" target="_blank" rel="noopener" aria-label="WhatsApp">
+                            <ion-icon name="logo-whatsapp"></ion-icon>
+                        </a>
+                    </div>
                 </div>
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="index.html#about">Empresa</a></li>
+                        <li><a href="index.html#services">Serviços</a></li>
+                        <li><a href="index.html#projects">Projetos</a></li>
+                        <li><a href="nossa-historia.html">Nossa História</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="https://wa.me/5511948825691" target="_blank" rel="noopener">+55 11 94882-5691</a></li>
+                        <li><a href="mailto:kennedysantossouza@hotmail.com">E-mail</a></li>
+                        <li><a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kennedev. Todos os direitos reservados.</p>
+                <p class="footer-credit">Desenvolvido com profissionalismo e dedicação.</p>
             </div>
         </div>
     </footer>
