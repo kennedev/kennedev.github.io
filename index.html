@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kennedev | Desenvolvimento de Sites, Softwares e Soluções em Tecnologia</title>
-    <meta name="description" content="Kennedev - Empresa especializada em desenvolvimento de sites, softwares e soluções tecnológicas para empresas que desejam transformar seus negócios.">
-    
+    <meta name="description" content="Kennedev - Empresa especializada em desenvolvimento de sites, softwares e soluções tecnológicas sob medida para empresas que desejam transformar seus negócios.">
+    <meta name="theme-color" content="#070b16">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/anka-coder" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -17,128 +17,193 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#home" class="nav-logo">&lt;kennedev&gt;</a>
+            <a href="#home" class="nav-logo" aria-label="Kennedev — início">
+                <span class="logo-mark" aria-hidden="true"></span>
+                <span class="logo-text">Kennedev</span>
+            </a>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home" class="nav-link">Início</a></li>
+                <li><a href="#about" class="nav-link">Empresa</a></li>
                 <li><a href="#services" class="nav-link">Serviços</a></li>
                 <li><a href="#projects" class="nav-link">Projetos</a></li>
                 <li><a href="nossa-historia.html" class="nav-link">Nossa História</a></li>
                 <li><a href="#contact" class="nav-link">Contato</a></li>
             </ul>
-            <button class="hamburger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-primary btn-sm nav-cta">Solicitar orçamento</a>
+                <button class="hamburger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-bg">
-            <div class="gradient-orb orb-1"></div>
-            <div class="gradient-orb orb-2"></div>
+        <div class="hero-bg" aria-hidden="true">
+            <canvas class="hero-canvas"></canvas>
+            <div class="hero-grid"></div>
+            <div class="hero-spotlight"></div>
+            <div class="hero-aurora">
+                <span class="aurora aurora-1"></span>
+                <span class="aurora aurora-2"></span>
+            </div>
+            <div class="hero-vignette"></div>
         </div>
         <div class="hero-content">
             <div class="hero-text fade-in">
-                <p class="hero-greeting">Soluções em tecnologia para o seu negócio</p>
-                <h1 class="hero-title">Kennedev</h1>
-                <h2 class="hero-subtitle">Sites, Softwares e Soluções Digitais</h2>
-                <p class="hero-description">Desenvolvemos soluções tecnológicas sob medida para empresas que desejam otimizar processos, aumentar vendas e consolidar sua presença digital.</p>
+                <p class="hero-greeting"><span class="ping" aria-hidden="true"></span> Empresa de desenvolvimento de software</p>
+                <h1 class="hero-title">Tecnologia sob medida para o seu negócio <span class="gradient-text">crescer</span></h1>
+                <p class="hero-description">A Kennedev desenvolve sites, softwares e plataformas que otimizam processos, aumentam vendas e consolidam a presença digital da sua empresa.</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">
-                        Conheça Nossos Projetos
+                        Conheça nossos projetos
                         <ion-icon name="arrow-forward-outline"></ion-icon>
                     </a>
                     <a href="#contact" class="btn btn-secondary">
-                        Solicitar Orçamento
+                        Solicitar orçamento
                         <ion-icon name="mail-outline"></ion-icon>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
+        <a href="#stats" class="scroll-indicator" aria-label="Rolar para conteúdo">
             <ion-icon name="chevron-down-outline"></ion-icon>
+        </a>
+    </section>
+
+    <!-- Tech Marquee (trust strip) -->
+    <section class="marquee-section" aria-label="Tecnologias que utilizamos">
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <i class="devicon-html5-plain colored"></i>
+                <i class="devicon-css3-plain colored"></i>
+                <i class="devicon-javascript-plain colored"></i>
+                <i class="devicon-svelte-plain colored"></i>
+                <i class="devicon-ruby-plain colored"></i>
+                <i class="devicon-rails-plain colored"></i>
+                <i class="devicon-nodejs-plain colored"></i>
+                <i class="devicon-php-plain colored"></i>
+                <i class="devicon-python-plain colored"></i>
+                <i class="devicon-postgresql-plain colored"></i>
+                <i class="devicon-mysql-plain colored"></i>
+                <i class="devicon-docker-plain colored"></i>
+                <i class="devicon-amazonwebservices-plain colored"></i>
+                <!-- duplicado para loop contínuo -->
+                <i class="devicon-html5-plain colored"></i>
+                <i class="devicon-css3-plain colored"></i>
+                <i class="devicon-javascript-plain colored"></i>
+                <i class="devicon-svelte-plain colored"></i>
+                <i class="devicon-ruby-plain colored"></i>
+                <i class="devicon-rails-plain colored"></i>
+                <i class="devicon-nodejs-plain colored"></i>
+                <i class="devicon-php-plain colored"></i>
+                <i class="devicon-python-plain colored"></i>
+                <i class="devicon-postgresql-plain colored"></i>
+                <i class="devicon-mysql-plain colored"></i>
+                <i class="devicon-docker-plain colored"></i>
+                <i class="devicon-amazonwebservices-plain colored"></i>
+            </div>
         </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="stats">
+    <section id="stats" class="stats">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-card reveal">
+                <div class="stat-card reveal" data-spotlight>
                     <div class="stat-icon">
                         <ion-icon name="time-outline"></ion-icon>
                     </div>
                     <h3 class="stat-number" data-target="12">0</h3>
-                    <p class="stat-label">Anos de Experiência</p>
+                    <p class="stat-label">Anos de experiência</p>
                 </div>
-                <div class="stat-card reveal">
+                <div class="stat-card reveal" data-spotlight>
                     <div class="stat-icon">
-                        <ion-icon name="business-outline"></ion-icon>
+                        <ion-icon name="rocket-outline"></ion-icon>
                     </div>
                     <h3 class="stat-number" data-target="3">0</h3>
-                    <p class="stat-label">Projetos em Destaque</p>
+                    <p class="stat-label">Projetos em destaque</p>
                 </div>
-                <div class="stat-card reveal">
+                <div class="stat-card reveal" data-spotlight>
                     <div class="stat-icon">
                         <ion-icon name="code-slash-outline"></ion-icon>
                     </div>
                     <h3 class="stat-number" data-target="15">0</h3>
-                    <p class="stat-label">Tecnologias Aplicadas</p>
+                    <p class="stat-label">Tecnologias aplicadas</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CEO Card Section -->
-    <section class="ceo-section">
+    <!-- About / Company Section -->
+    <section id="about" class="about">
         <div class="container">
-            <a href="nossa-historia.html" class="ceo-card reveal">
-                <div class="ceo-card-content">
-                    <div class="ceo-image-wrapper">
-                        <img src="img/profile_photo.jpeg" alt="Kennedy Souza - CEO e Fundador da Kennedev" class="ceo-image">
+            <div class="section-header reveal">
+                <span class="section-tag">Quem somos</span>
+                <h2 class="section-title">Sobre a Kennedev</h2>
+            </div>
+            <div class="about-content">
+                <p class="about-paragraph reveal">A Kennedev é uma empresa de desenvolvimento de sites, softwares e soluções tecnológicas para empresas que desejam transformar seus negócios. Atuamos em projetos de diversos portes — de sites institucionais a plataformas SaaS completas — com foco em qualidade, segurança e escalabilidade.</p>
+                <div class="about-highlights">
+                    <div class="value-card reveal" data-spotlight>
+                        <div class="value-icon"><ion-icon name="cube-outline"></ion-icon></div>
+                        <h3>Soluções sob medida</h3>
+                        <p>Cada projeto é desenhado para o seu negócio. Nada de templates genéricos — entregamos o que a sua operação realmente precisa.</p>
                     </div>
-                    <div class="ceo-info">
-                        <span class="ceo-tag">Liderança</span>
-                        <h3 class="ceo-title">Sobre o CEO</h3>
-                        <p class="ceo-description">Kennedy Souza, fundador da Kennedev, traz mais de 12 anos de experiência em desenvolvimento de software. Especialista em criar soluções escaláveis e inovadoras para empresas de todos os portes.</p>
-                        <span class="ceo-link">Conheça nossa história <ion-icon name="arrow-forward-outline"></ion-icon></span>
+                    <div class="value-card reveal" data-spotlight>
+                        <div class="value-icon"><ion-icon name="git-branch-outline"></ion-icon></div>
+                        <h3>Engenharia de verdade</h3>
+                        <p>Testes automatizados, CI/CD e boas práticas de desenvolvimento. Código que escala, se mantém e não vira dor de cabeça depois.</p>
+                    </div>
+                    <div class="value-card reveal" data-spotlight>
+                        <div class="value-icon"><ion-icon name="trending-up-outline"></ion-icon></div>
+                        <h3>Foco em resultado</h3>
+                        <p>Tecnologia a serviço de vendas, produtividade e crescimento. Construímos para gerar valor real, não só para impressionar.</p>
+                    </div>
+                    <div class="value-card reveal" data-spotlight>
+                        <div class="value-icon"><ion-icon name="people-outline"></ion-icon></div>
+                        <h3>Parceria contínua</h3>
+                        <p>Acompanhamento próximo do briefing à evolução do produto. Uma relação de confiança, do primeiro contato ao longo prazo.</p>
                     </div>
                 </div>
-            </a>
+                <a href="nossa-historia.html" class="about-link reveal">
+                    Conheça nossa história
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="about">
+    <section id="services" class="services">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">O que fazemos</span>
-                <h2 class="section-title">Nossos Serviços</h2>
+                <h2 class="section-title">Nossos serviços</h2>
             </div>
-            <div class="about-content">
-                <div class="about-text reveal">
-                    <p class="about-paragraph">A Kennedev é uma empresa de desenvolvimento de sites, softwares e soluções tecnológicas para empresas que desejam transformar seus negócios. Oferecemos projetos sob medida, desde sites institucionais até plataformas SaaS completas.</p>
-                    
-                    <div class="about-highlights services-highlights">
-                        <div class="highlight-item">
-                            <ion-icon name="globe-outline"></ion-icon>
-                            <span>Sites Institucionais e Corporativos</span>
-                        </div>
-                        <div class="highlight-item">
-                            <ion-icon name="desktop-outline"></ion-icon>
-                            <span>Desenvolvimento de Softwares Personalizados</span>
-                        </div>
-                        <div class="highlight-item">
-                            <ion-icon name="cloud-outline"></ion-icon>
-                            <span>Plataformas SaaS e Sistemas Web</span>
-                        </div>
-                        <div class="highlight-item">
-                            <ion-icon name="construct-outline"></ion-icon>
-                            <span>Integrações e Automação de Processos</span>
-                        </div>
-                    </div>
+            <div class="services-grid">
+                <div class="service-card reveal" data-spotlight>
+                    <div class="service-icon"><ion-icon name="globe-outline"></ion-icon></div>
+                    <h3>Sites institucionais e corporativos</h3>
+                    <p>Presença digital profissional, rápida e responsiva, que transmite credibilidade e converte visitantes em clientes.</p>
+                </div>
+                <div class="service-card reveal" data-spotlight>
+                    <div class="service-icon"><ion-icon name="desktop-outline"></ion-icon></div>
+                    <h3>Softwares personalizados</h3>
+                    <p>Sistemas sob medida para automatizar a operação, eliminar planilhas e dar escala aos processos do seu negócio.</p>
+                </div>
+                <div class="service-card reveal" data-spotlight>
+                    <div class="service-icon"><ion-icon name="cloud-outline"></ion-icon></div>
+                    <h3>Plataformas SaaS e sistemas web</h3>
+                    <p>Produtos web completos, multiusuário e escaláveis, com infraestrutura em nuvem e arquitetura preparada para crescer.</p>
+                </div>
+                <div class="service-card reveal" data-spotlight>
+                    <div class="service-icon"><ion-icon name="construct-outline"></ion-icon></div>
+                    <h3>Integrações e automação</h3>
+                    <p>Conectamos sistemas, APIs e canais para automatizar fluxos, reduzir trabalho manual e dar agilidade ao dia a dia.</p>
                 </div>
             </div>
         </div>
@@ -149,10 +214,10 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">Tecnologias</span>
-                <h2 class="section-title">Com Que Trabalhamos</h2>
+                <h2 class="section-title">Com que trabalhamos</h2>
             </div>
             <div class="skills-grid">
-                <div class="skill-category reveal">
+                <div class="skill-category reveal" data-spotlight>
                     <div class="skill-header">
                         <ion-icon name="desktop-outline"></ion-icon>
                         <h3>Front-End</h3>
@@ -164,7 +229,7 @@
                         <div class="skill-item" data-skill="Svelte"><i class="devicon-svelte-plain colored"></i></div>
                     </div>
                 </div>
-                <div class="skill-category reveal">
+                <div class="skill-category reveal" data-spotlight>
                     <div class="skill-header">
                         <ion-icon name="server-outline"></ion-icon>
                         <h3>Back-End</h3>
@@ -177,7 +242,7 @@
                         <div class="skill-item" data-skill="Python"><i class="devicon-python-plain colored"></i></div>
                     </div>
                 </div>
-                <div class="skill-category reveal">
+                <div class="skill-category reveal" data-spotlight>
                     <div class="skill-header">
                         <ion-icon name="server-outline"></ion-icon>
                         <h3>Banco de Dados</h3>
@@ -187,7 +252,7 @@
                         <div class="skill-item" data-skill="MySQL"><i class="devicon-mysql-plain colored"></i></div>
                     </div>
                 </div>
-                <div class="skill-category reveal">
+                <div class="skill-category reveal" data-spotlight>
                     <div class="skill-header">
                         <ion-icon name="construct-outline"></ion-icon>
                         <h3>DevOps & Infra</h3>
@@ -206,14 +271,14 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">Portfólio</span>
-                <h2 class="section-title">Projetos Realizados</h2>
+                <h2 class="section-title">Projetos realizados</h2>
             </div>
             <div class="projects-grid">
                 <!-- Aizaph - Destaque SaaS -->
-                <a href="https://aizaph.com.br" target="_blank" rel="noopener" class="project-card project-featured reveal">
+                <a href="https://aizaph.com.br" target="_blank" rel="noopener" class="project-card project-featured reveal" data-spotlight>
                     <div class="project-badge">Plataforma SaaS</div>
                     <div class="project-image">
-                        <img src="img/aizaph.png" alt="Screenshot da plataforma Aizaph">
+                        <img src="img/aizaph.png" alt="Screenshot da plataforma Aizaph" loading="lazy">
                         <div class="project-overlay">
                             <ion-icon name="open-outline"></ion-icon>
                             <span>Visitar site</span>
@@ -231,9 +296,9 @@
                     </div>
                 </a>
 
-                <a href="https://aizaph.com.br/modulos/barber" target="_blank" rel="noopener" class="project-card reveal">
+                <a href="https://aizaph.com.br/modulos/barber" target="_blank" rel="noopener" class="project-card reveal" data-spotlight>
                     <div class="project-image">
-                        <img src="img/aizaph_studio.png" alt="Screenshot do módulo Aizaph Studio">
+                        <img src="img/aizaph_studio.png" alt="Screenshot do módulo Aizaph Studio" loading="lazy">
                         <div class="project-overlay">
                             <ion-icon name="open-outline"></ion-icon>
                             <span>Visitar site</span>
@@ -241,7 +306,7 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Aizaph Studio</h3>
-                        <p class="project-description">Módulo para barbearias e salões de beleza. Agendamento automático pelo agente IA, ficha de clientes, controle de serviços e lembretes de confirmação.</p>
+                        <p class="project-description">Módulo para barbearias e salões de beleza. Agendamento automático pelo agente de IA, ficha de clientes, controle de serviços e lembretes de confirmação.</p>
                         <div class="project-tags">
                             <span class="tag tag-saas">Módulo Aizaph</span>
                             <span class="tag">Agendamento</span>
@@ -251,9 +316,9 @@
                     </div>
                 </a>
 
-                <a href="https://abaty.com.br" target="_blank" rel="noopener" class="project-card reveal">
+                <a href="https://abaty.com.br" target="_blank" rel="noopener" class="project-card reveal" data-spotlight>
                     <div class="project-image">
-                        <img src="img/abaty.png" alt="Screenshot do site Abaty">
+                        <img src="img/abaty.png" alt="Screenshot do site Abaty" loading="lazy">
                         <div class="project-overlay">
                             <ion-icon name="open-outline"></ion-icon>
                             <span>Visitar site</span>
@@ -261,7 +326,7 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Abaty</h3>
-                        <p class="project-description">Site institucional desenvolvido para apresentação da marca e serviços da empresa com design profissional e responsivo.</p>
+                        <p class="project-description">Site institucional desenvolvido para apresentação da marca e dos serviços da empresa, com design profissional e responsivo.</p>
                         <div class="project-tags">
                             <span class="tag">Site Institucional</span>
                             <span class="tag">Responsivo</span>
@@ -270,9 +335,9 @@
                     </div>
                 </a>
 
-                <a href="https://agleilsonrodrigues.com.br" target="_blank" rel="noopener" class="project-card reveal">
+                <a href="https://agleilsonrodrigues.com.br" target="_blank" rel="noopener" class="project-card reveal" data-spotlight>
                     <div class="project-image">
-                        <img src="img/agleilson.png" alt="Screenshot do site Agleilson Rodrigues">
+                        <img src="img/agleilson.png" alt="Screenshot do site Agleilson Rodrigues" loading="lazy">
                         <div class="project-overlay">
                             <ion-icon name="open-outline"></ion-icon>
                             <span>Visitar site</span>
@@ -280,7 +345,7 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Agleilson Rodrigues</h3>
-                        <p class="project-description">Website profissional com identidade visual personalizada para destacar os serviços e contato do profissional.</p>
+                        <p class="project-description">Website profissional com identidade visual personalizada para destacar os serviços e o contato do profissional.</p>
                         <div class="project-tags">
                             <span class="tag">Site Profissional</span>
                             <span class="tag">Portfólio</span>
@@ -297,12 +362,22 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">Vamos conversar</span>
-                <h2 class="section-title">Entre em Contato</h2>
+                <h2 class="section-title">Entre em contato</h2>
             </div>
             <div class="contact-content reveal">
-                <p class="contact-description">Tem um projeto em mente? Entre em contato e receba um orçamento personalizado para sua empresa.</p>
+                <p class="contact-description">Tem um projeto em mente? Fale com a gente e receba um orçamento personalizado para a sua empresa.</p>
                 <div class="contact-methods">
-                    <a href="mailto:kennedysantossouza@hotmail.com" class="contact-card">
+                    <a href="https://wa.me/5511948825691?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento!" target="_blank" rel="noopener" class="contact-card" data-spotlight>
+                        <div class="contact-icon">
+                            <ion-icon name="logo-whatsapp"></ion-icon>
+                        </div>
+                        <div class="contact-info">
+                            <h4>WhatsApp</h4>
+                            <p>+55 11 94882-5691</p>
+                        </div>
+                    </a>
+                    <!-- TODO: trocar por e-mail de domínio profissional quando disponível (basta editar href e o texto) -->
+                    <a href="mailto:kennedysantossouza@hotmail.com" class="contact-card" data-spotlight>
                         <div class="contact-icon">
                             <ion-icon name="mail-outline"></ion-icon>
                         </div>
@@ -311,7 +386,7 @@
                             <p>kennedysantossouza@hotmail.com</p>
                         </div>
                     </a>
-                    <a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank" rel="noopener" class="contact-card">
+                    <a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank" rel="noopener" class="contact-card" data-spotlight>
                         <div class="contact-icon">
                             <ion-icon name="logo-linkedin"></ion-icon>
                         </div>
@@ -325,11 +400,26 @@
         </div>
     </section>
 
+    <!-- CTA Band -->
+    <section class="cta-band">
+        <div class="container">
+            <div class="cta-inner reveal">
+                <div class="cta-text">
+                    <h2>Vamos tirar o seu projeto do papel?</h2>
+                    <p>Conte o desafio do seu negócio. A gente desenha a solução tecnológica certa para ele.</p>
+                </div>
+                <a href="https://wa.me/5511948825691?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento!" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+                    Falar com a Kennedev
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/5511948825691?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento!"
        class="whatsapp-float"
        target="_blank"
-       style="--position: 3"
        rel="noopener"
        aria-label="Fale conosco no WhatsApp">
         <ion-icon name="logo-whatsapp"></ion-icon>
@@ -339,13 +429,44 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Kennedev. Desenvolvido com profissionalismo e dedicação.</p>
-                <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                        <ion-icon name="logo-linkedin"></ion-icon>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="nav-logo">
+                        <span class="logo-mark" aria-hidden="true"></span>
+                        <span class="logo-text">Kennedev</span>
                     </a>
+                    <p class="footer-tagline">Sites, softwares e soluções digitais sob medida para empresas que querem crescer com tecnologia.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                        <a href="https://wa.me/5511948825691" target="_blank" rel="noopener" aria-label="WhatsApp">
+                            <ion-icon name="logo-whatsapp"></ion-icon>
+                        </a>
+                    </div>
                 </div>
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Empresa</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#projects">Projetos</a></li>
+                        <li><a href="nossa-historia.html">Nossa História</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="https://wa.me/5511948825691" target="_blank" rel="noopener">+55 11 94882-5691</a></li>
+                        <li><a href="mailto:kennedysantossouza@hotmail.com">E-mail</a></li>
+                        <li><a href="https://www.linkedin.com/in/kennedysantossouza/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kennedev. Todos os direitos reservados.</p>
+                <p class="footer-credit">Desenvolvido com profissionalismo e dedicação.</p>
             </div>
         </div>
     </footer>
