@@ -1,0 +1,5 @@
+# Pasta só de imagens enviadas. Nunca executar código aqui.
+php_flag engine off
+<FilesMatch "\.(php|php5|php7|phtml|pl|py|cgi|sh)$">
+  Require all denied
+</FilesMatch>

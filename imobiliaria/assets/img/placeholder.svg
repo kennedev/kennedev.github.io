@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#EAF1EC"/>
+  <g fill="none" stroke="#1D9137" stroke-width="10" stroke-linejoin="round" stroke-linecap="round" opacity="0.7">
+    <path d="M250 320 L400 210 L550 320 V440 H250 Z"/>
+    <path d="M360 440 V370 H440 V440"/>
+  </g>
+  <text x="400" y="515" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="600" fill="#6B7670">Sem foto</text>
+</svg>

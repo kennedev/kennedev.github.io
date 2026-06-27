@@ -1,0 +1,111 @@
+/* ==========================================================================
+   Ajustes próprios da M.A. Barbearia (carregado por último — sobrescreve os demais)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Equipe — cards recriados (todas as larguras)
+
+   O template original usa uma legenda flutuante baseada numa PNG grunge
+   (team_bg.png) posicionada de forma absoluta, sobreposta à foto. Isso quebra
+   em telas menores e destoa do resto da página.
+
+   Aqui cada membro vira um card integrado: foto em cima, painel navy logo
+   abaixo, tudo num único bloco arredondado com sombra discreta — seguindo os
+   tokens da página (gold #d19f68, navy #1d2434, Oswald maiúsculo, raio 7px).
+
+   IMPORTANTE: os seletores são prefixados com `.team-area` para igualar a
+   especificidade do template (.team-area .single-team .team-caption = 0,3,0).
+   Como este arquivo carrega depois do style.css, vence por ordem de cascata.
+   -------------------------------------------------------------------------- */
+
+/* Card */
+.team-area .single-team {
+  position: relative;
+  margin-bottom: 0;                 /* anula o mb-80 do HTML */
+  background-color: #1d2434;
+  border-radius: 7px;
+  overflow: hidden;                 /* arredonda topo da foto e base do painel */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Foto — formato retrato uniforme em todos os cards */
+.team-area .single-team .team-img {
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+}
+
+.team-area .single-team .team-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Painel — neutraliza TODO o posicionamento absoluto/PNG do template,
+   inclusive as variações responsivas (mesma especificidade, carregado depois) */
+.team-area .single-team .team-caption {
+  position: static;
+  width: auto;
+  max-width: none;
+  height: auto;
+  min-height: 112px;
+  margin: 0;
+  padding: 24px 18px;
+  background-image: none;
+  background-color: #1d2434;
+  text-align: center;
+}
+
+/* Decoração grunge de hover não se aplica ao card integrado */
+.team-area .single-team .team-caption::before {
+  display: none;
+}
+
+/* Cargo */
+.team-area .single-team .team-caption span {
+  color: #d19f68;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+/* Nome */
+.team-area .single-team .team-caption h3 a {
+  color: #fff;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 0;
+  transition: color 0.3s ease;
+}
+
+/* Hover — substitui a interatividade que a plaquinha grunge dava */
+.team-area .single-team:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.team-area .single-team:hover .team-caption h3 a {
+  color: #d19f68;
+}
+
+/* Ritmo vertical e dots do carrossel */
+.team-area.pb-180 {
+  padding-bottom: 90px;
+}
+
+.team-area .dot-style .slick-dots {
+  bottom: -45px;
+}
+
+/* --------------------------------------------------------------------------
+   Serviços — ícones de fonte no lugar das imagens externas (WordPress) que
+   estavam quebradas. O <i> herda o estilo .service-icon i do template (badge
+   navy 105x105 que vira gold no hover); aqui só arredondamos em círculo.
+   -------------------------------------------------------------------------- */
+.services-caption .service-icon i {
+  border-radius: 50%;
+}
