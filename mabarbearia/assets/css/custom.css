@@ -3,33 +3,63 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
+   Header — a barra ficava ~98px no topo porque três coisas eram altas demais:
+   links do menu (padding 39px), o botão "Agendar Horário" (padding 29px) e o
+   logo (até 70px). Reduzimos os três para uma barra compacta (~60px), próxima
+   do estado sticky (que já usa 20px) para não haver salto ao rolar.
+   -------------------------------------------------------------------------- */
+/* Topo da página */
+.header-area .main-menu ul li a {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+/* Estado sticky (mesma especificidade do template, carregado depois) */
+.header-sticky.sticky-bar.sticky .main-menu ul li a {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+.header-area .header-btn {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+.header-area .logo img {
+  max-height: 40px !important;
+  width: auto;
+}
+.header-area.pt-20 {
+  padding-top: 8px;
+}
+
+/* --------------------------------------------------------------------------
    Equipe — cards recriados (todas as larguras)
 
    O template original usa uma legenda flutuante baseada numa PNG grunge
    (team_bg.png) posicionada de forma absoluta, sobreposta à foto. Isso quebra
    em telas menores e destoa do resto da página.
 
-   Aqui cada membro vira um card integrado: foto em cima, painel navy logo
-   abaixo, tudo num único bloco arredondado com sombra discreta — seguindo os
-   tokens da página (gold #d19f68, navy #1d2434, Oswald maiúsculo, raio 7px).
+   Aqui cada membro vira um card editorial: retrato full-bleed com nome e cargo
+   sobrepostos sobre um gradiente Ônix, acento Bourbon e zoom suave da foto no
+   hover — seguindo a paleta da marca (Ônix #0E1110, Bourbon #A58E66, Linho
+   #EBE3DB). Ver [[ma-barbearia-brand]].
 
    IMPORTANTE: os seletores são prefixados com `.team-area` para igualar a
    especificidade do template (.team-area .single-team .team-caption = 0,3,0).
    Como este arquivo carrega depois do style.css, vence por ordem de cascata.
    -------------------------------------------------------------------------- */
 
-/* Card */
+/* Card — retrato full-bleed com nome/cargo sobrepostos (estilo editorial da marca) */
 .team-area .single-team {
   position: relative;
   margin-bottom: 0;                 /* anula o mb-80 do HTML */
-  background-color: #1d2434;
-  border-radius: 7px;
-  overflow: hidden;                 /* arredonda topo da foto e base do painel */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  background-color: #0E1110;
+  border: 1px solid rgba(165, 142, 102, 0.28);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(14, 17, 16, 0.28);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
-/* Foto — formato retrato uniforme em todos os cards */
+/* Foto preenche o card inteiro */
 .team-area .single-team .team-img {
   overflow: hidden;
   aspect-ratio: 4 / 5;
@@ -40,56 +70,100 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
-/* Painel — neutraliza TODO o posicionamento absoluto/PNG do template,
-   inclusive as variações responsivas (mesma especificidade, carregado depois) */
+/* Gradiente Ônix na base da foto, para o texto respirar */
+.team-area .single-team::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 72%;
+  background: linear-gradient(
+    to top,
+    #0E1110 6%,
+    rgba(14, 17, 16, 0.82) 36%,
+    rgba(14, 17, 16, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Legenda sobreposta na base do card */
 .team-area .single-team .team-caption {
-  position: static;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
   width: auto;
   max-width: none;
   height: auto;
-  min-height: 112px;
+  min-height: 0;
   margin: 0;
-  padding: 24px 18px;
+  padding: 30px 26px;
+  background: none;
   background-image: none;
-  background-color: #1d2434;
-  text-align: center;
+  text-align: left;
 }
 
-/* Decoração grunge de hover não se aplica ao card integrado */
+/* Decoração grunge do template não se aplica */
 .team-area .single-team .team-caption::before {
   display: none;
 }
 
-/* Cargo */
+/* Cargo (bourbon, uppercase) */
 .team-area .single-team .team-caption span {
-  color: #d19f68;
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  line-height: 1.35;
+  display: block;
+  color: #A58E66;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  line-height: 1.4;
   margin-bottom: 8px;
 }
 
-/* Nome */
+/* Nome (linho) */
 .team-area .single-team .team-caption h3 a {
-  color: #fff;
-  font-size: 19px;
+  color: #EBE3DB;
+  font-size: 22px;
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1.2;
   margin-bottom: 0;
   transition: color 0.3s ease;
 }
 
-/* Hover — substitui a interatividade que a plaquinha grunge dava */
+/* Filete bourbon abaixo do nome, cresce no hover */
+.team-area .single-team .team-caption h3::after {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 2px;
+  background: #A58E66;
+  margin-top: 14px;
+  transition: width 0.4s ease;
+}
+
+/* Hover */
 .team-area .single-team:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+  border-color: rgba(165, 142, 102, 0.6);
+  box-shadow: 0 26px 55px rgba(14, 17, 16, 0.4);
+}
+
+.team-area .single-team:hover .team-img img {
+  transform: scale(1.06);
 }
 
 .team-area .single-team:hover .team-caption h3 a {
-  color: #d19f68;
+  color: #A58E66;
+}
+
+.team-area .single-team:hover .team-caption h3::after {
+  width: 64px;
 }
 
 /* Ritmo vertical e dots do carrossel */
@@ -101,11 +175,227 @@
   bottom: -45px;
 }
 
+.team-area .dot-style .slick-dots li button:before {
+  color: #A58E66;
+}
+.team-area .dot-style .slick-dots li.slick-active button:before {
+  color: #A58E66;
+}
+
 /* --------------------------------------------------------------------------
-   Serviços — ícones de fonte no lugar das imagens externas (WordPress) que
-   estavam quebradas. O <i> herda o estilo .service-icon i do template (badge
-   navy 105x105 que vira gold no hover); aqui só arredondamos em círculo.
+   Equipe — título: cabia em 2 linhas e ficava gigante. Reduzido e forçado a
+   uma linha no desktop.
    -------------------------------------------------------------------------- */
-.services-caption .service-icon i {
-  border-radius: 50%;
+#equipe .section-tittle h2 {
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.2;
+  white-space: normal;
+  text-wrap: balance;
+}
+#equipe .section-tittle.mb-100 {
+  margin-bottom: 60px;
+}
+
+/* --------------------------------------------------------------------------
+   Serviços — cards redesenhados (sem ícone por enquanto)
+
+   Card escuro premium alinhado à proposta de marca: fundo Ônix Imperial,
+   texto Linho Italiano e acento Dourado Bourbon. O card escuro sobre a seção
+   clara dá o contorno definido que faltava. No hover: elevação + filete bourbon
+   no topo. Tokens da marca: Ônix #0E1110, Bourbon #A58E66, Linho #EBE3DB.
+   -------------------------------------------------------------------------- */
+
+/* esconde os ícones (markup mantido para reuso futuro) */
+.service-area .services-caption .service-icon {
+  display: none;
+}
+
+/* Card */
+.service-area .services-caption {
+  position: relative;
+  height: 100%;
+  padding: 48px 34px;
+  background: #0E1110;
+  border: 1px solid rgba(165, 142, 102, 0.28);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(14, 17, 16, 0.28);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+/* Filete bourbon no topo — aparece no hover */
+.service-area .services-caption::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #A58E66;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.service-area .services-caption:hover {
+  transform: translateY(-8px);
+  border-color: rgba(165, 142, 102, 0.6);
+  box-shadow: 0 26px 55px rgba(14, 17, 16, 0.4);
+}
+
+.service-area .services-caption:hover::after {
+  transform: scaleX(1);
+}
+
+/* Título e texto sobre o card escuro */
+.service-area .services-caption .service-cap h4 a {
+  color: #EBE3DB;
+  transition: color 0.3s ease;
+}
+.service-area .services-caption:hover .service-cap h4 a {
+  color: #A58E66;
+}
+.service-area .services-caption .service-cap p {
+  color: rgba(235, 227, 219, 0.68);
+}
+
+/* --------------------------------------------------------------------------
+   Serviços — carrossel também no desktop (≥768px)
+
+   No mobile (≤767px) o carrossel já é tratado em style.css (scroll-snap puro,
+   cards a 82%, dica "deslize"). Aqui estendemos a mesma mecânica de scroll-snap
+   ao desktop, mas mostrando ~4 cards + peek do 5º e com setas ‹ › (mouse não
+   tem swipe). Os media queries não se sobrepõem (max-width:767 vs min-width:768),
+   então o comportamento mobile fica intacto.
+   -------------------------------------------------------------------------- */
+.services-carousel {
+  position: relative;
+}
+
+/* setas escondidas por padrão; só aparecem no desktop */
+.services-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .services-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 10px;
+  }
+
+  .services-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ~3 cards visíveis + peek do 4º */
+  .services-row > [class*="col-"] {
+    flex: 0 0 30%;
+    max-width: 30%;
+    scroll-snap-align: start;
+  }
+
+  .services-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 40%;                 /* alinhado ao corpo do card, acima do padding inferior */
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: #0E1110;       /* tokens da marca: Ônix + Bourbon */
+    color: #A58E66;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 5;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    transition: background 0.25s ease, color 0.25s ease, opacity 0.25s ease;
+  }
+
+  .services-nav:hover {
+    background: #A58E66;
+    color: #0E1110;
+  }
+
+  .services-prev {
+    left: -10px;
+  }
+
+  .services-next {
+    right: -10px;
+  }
+
+  /* estado desabilitado nas extremidades (toggle via JS) */
+  .services-nav[disabled] {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Tipografia da marca (proposta V.Rigz)
+   - Título: Zalando Sans Expanded Medium (500)
+   - Subtítulo/Texto: Zalando Sans Expanded Regular (400)
+   - Texto sistêmico (menu, botões, formulários): Inter Regular
+   O template usava Oswald (títulos), Poppins (corpo) e Open Sans (menu); aqui
+   sobrescrevemos para o padrão da marca. Ver [[ma-barbearia-brand]].
+   -------------------------------------------------------------------------- */
+body {
+  font-family: "Zalando Sans Expanded", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Zalando Sans Expanded", sans-serif !important;
+  font-weight: 500;
+}
+
+/* Texto sistêmico em Inter */
+.btn,
+button,
+input,
+textarea,
+select,
+.header-area .main-menu ul li a,
+.slicknav_nav a {
+  font-family: "Inter", sans-serif !important;
+}
+
+/* --------------------------------------------------------------------------
+   Tamanhos dos títulos — a Zalando Expanded é bem mais larga que a Oswald
+   original, então os tamanhos do template (hero 60px, seção 50px) estouravam
+   o enquadramento. Reescalados com clamp() (fluido) e entrelinha mais justa.
+   -------------------------------------------------------------------------- */
+.hero__caption h1 {
+  font-size: clamp(24px, 3.4vw, 36px);
+  line-height: 1.12;
+}
+
+.section-tittle h2 {
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.2;
+}
+
+/* --------------------------------------------------------------------------
+   Hero — o slider tinha altura fixa de 1000px (maior que a tela), jogando o
+   conteúdo para baixo da dobra. Travamos em 100vh para abrir do tamanho exato
+   da tela.
+   -------------------------------------------------------------------------- */
+.slider-height {
+  height: 100vh;
+  min-height: 560px;
+}
+
+/* Caption um pouco acima do centro (sensação de "abriu certo") */
+@media (min-width: 768px) {
+  .hero__caption {
+    transform: translateY(-30px);
+  }
 }

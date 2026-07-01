@@ -10,6 +10,11 @@
     <link rel="shortcut icon" type="image/png" href="assets/img/logo/logo.png">
     <link rel="icon" type="image/png" href="assets/img/logo/logo.png">
 
+    <!-- Fontes da marca -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Zalando+Sans+Expanded:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 	<!-- CSS here -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
@@ -95,7 +100,7 @@
                                     <p data-animation="fadeInUp" data-delay="0.7s">Desde 2019, oferecendo muito mais do que um corte de cabelo — uma experiência completa de cuidados pessoais e bem-estar.</p>
                                     <div data-animation="fadeInUp" data-delay="0.9s" class="d-none d-md-flex flex-wrap" style="gap:16px;margin-top:30px;">
                                         <a href="https://wa.me/5511984877018" target="_blank" class="btn hero-btn">Agendar meu horário agora</a>
-                                        <a href="https://wa.me/5511984877018" target="_blank" class="btn hero-btn" style="background:transparent;border:2px solid #d19f68;color:#d19f68;">Chama no WhatsApp</a>
+                                        <a href="https://wa.me/5511984877018" target="_blank" class="btn hero-btn" style="background:transparent;border:2px solid #A58E66;color:#A58E66;">Chama no WhatsApp</a>
                                     </div>
                                 </div>
                             </div>
@@ -120,13 +125,6 @@
             <div class="stock-text">
                 <!-- <h2>M.A. Barbearia</h2>
                 <h2>M.A. Barbearia</h2> -->
-            </div>
-             <!-- Arrow -->
-             <div class="thumb-content-box">
-                <div class="thumb-content">
-                    <h3>Agende seu horário agora</h3>
-                    <a href="https://wa.me/5511984877018" target="_blank"> <i class="fas fa-long-arrow-alt-right"></i></a>
-                </div>
             </div>
         </div>
         <!-- slider Area End-->
@@ -180,6 +178,8 @@
                     </div>
                 </div>
                 <!-- Section caption -->
+                <div class="services-carousel">
+                <button type="button" class="services-nav services-prev" aria-label="Serviços anteriores">‹</button>
                 <div class="row services-row">
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="services-caption text-center mb-30">
@@ -195,8 +195,10 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="services-caption active text-center mb-30">
                             <div class="service-icon">
-                                <i class="fas fa-male"></i>
-                            </div> 
+                                <svg class="service-svg" viewBox="0 0 120 50" aria-hidden="true" role="img">
+                                    <path d="M60 10 C50 2 28 2 14 10 C4 15 2 28 8 30 C12 32 16 26 24 22 C36 16 48 18 60 28 C72 18 84 16 96 22 C104 26 108 32 112 30 C118 28 116 15 106 10 C92 2 70 2 60 10 Z"/>
+                                </svg>
+                            </div>
                             <div class="service-cap">
                                 <h4><a href="#">Barba</a></h4>
                                 <p>Cuide da sua barba com o nosso serviço especializado. Do desenho perfeito ao acabamento impecável, garantimos que você sairá com uma barba que realça sua personalidade.</p>
@@ -248,6 +250,8 @@
                         </div>
                     </div>
                 </div>
+                <button type="button" class="services-nav services-next" aria-label="Próximos serviços">›</button>
+                </div>
             </div>
         </section>
         <!-- Services Area End -->
@@ -258,7 +262,6 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-8 col-lg-8 col-md-11 col-sm-11">
                         <div class="section-tittle text-center mb-100">
-                            <span>Nossos profissionais</span>
                             <h2>Conheça a equipe de especialistas M.A.</h2>
                         </div>
                     </div>
@@ -290,11 +293,11 @@
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
                         <div class="single-team mb-80 text-center">
                             <div class="team-img">
-                                <img src="assets/img/gallery/alex.jpeg" alt="Alex Ferreira Fernandes">
+                                <img src="assets/img/gallery/alex.jpeg" alt="Alex Ferreira">
                             </div>
                             <div class="team-caption">
                                 <span>Barbeiro há 3 anos · Especialista em degradê</span>
-                                <h3><a href="#">Alex Ferreira Fernandes</a></h3>
+                                <h3><a href="#">Alex Ferreira</a></h3>
                             </div>
                         </div>
                     </div>
@@ -315,17 +318,18 @@
                         <div class="row">
                             <div class="col-12 col-md-6">
                                 <div class="pricing-list">
-                                    <h4 style="color:#d19f68;font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;">Serviços individuais</h4>
+                                    <h4 style="color:#A58E66;font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;">Serviços individuais</h4>
                                     <ul>
                                         <li>Corte Cabelo e Barba. . . . . . . . . . <span>R$110</span></li>
                                         <li>Corte de Cabelo. . . . . . . . . . . . . . . <span>R$55</span></li>
                                         <li>Barba. . . . . . . . . . . . . . . . . . . . . . . . <span>R$55</span></li>
+                                        <li>Massagem capilar. . . . . . . . . . . . . <span>R$30</span></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="pricing-list">
-                                    <h4 style="color:#d19f68;font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;">Planos mensais</h4>
+                                    <h4 style="color:#A58E66;font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;">Planos mensais</h4>
                                     <ul>
                                         <li>Pacote Gold. . . . . . . . . . . . . . . . . . .<span>R$135</span></li>
                                         <li style="font-size:11px;color:#888;margin-top:-10px;margin-bottom:12px;">3 serviços + 1 sobrancelha/mês</li>
@@ -413,24 +417,24 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 mb-50 text-center">
                         <div style="padding:40px 30px;background:#f8f8f8;border-radius:7px;height:100%;">
-                            <i class="fas fa-phone" style="font-size:36px;color:#d19f68;margin-bottom:20px;display:block;"></i>
-                            <h4 style="color:#1d2434;margin-bottom:10px;">Contato</h4>
+                            <i class="fas fa-phone" style="font-size:36px;color:#A58E66;margin-bottom:20px;display:block;"></i>
+                            <h4 style="color:#0E1110;margin-bottom:10px;">Contato</h4>
                             <p style="margin-bottom:8px;">(11) 9 8487-7018</p>
                             <a href="https://wa.me/5511984877018" target="_blank" class="btn" style="padding:14px 28px;margin-top:10px;">WhatsApp</a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 mb-50 text-center">
                         <div style="padding:40px 30px;background:#f8f8f8;border-radius:7px;height:100%;">
-                            <i class="fas fa-map-marker-alt" style="font-size:36px;color:#d19f68;margin-bottom:20px;display:block;"></i>
-                            <h4 style="color:#1d2434;margin-bottom:10px;">Nosso endereço</h4>
+                            <i class="fas fa-map-marker-alt" style="font-size:36px;color:#A58E66;margin-bottom:20px;display:block;"></i>
+                            <h4 style="color:#0E1110;margin-bottom:10px;">Nosso endereço</h4>
                             <p style="margin-bottom:4px;">Av. Manuel Alves Soares, 376</p>
                             <p>Parque Colonial, São Paulo - SP</p>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 mb-50 text-center">
                         <div style="padding:40px 30px;background:#f8f8f8;border-radius:7px;height:100%;">
-                            <i class="fas fa-clock" style="font-size:36px;color:#d19f68;margin-bottom:20px;display:block;"></i>
-                            <h4 style="color:#1d2434;margin-bottom:10px;">Horário de atendimento</h4>
+                            <i class="fas fa-clock" style="font-size:36px;color:#A58E66;margin-bottom:20px;display:block;"></i>
+                            <h4 style="color:#0E1110;margin-bottom:10px;">Horário de atendimento</h4>
                             <p style="margin-bottom:4px;">Terça a sexta: 9h30 – 19h30</p>
                             <p>Sábado: 9h30 – 20h00</p>
                         </div>
@@ -501,7 +505,7 @@
                                 </div>
                                 <div style="display:flex;gap:12px;margin-top:10px;">
                                     <a href="https://www.facebook.com/ma.barbearia1" target="_blank" class="btn" style="padding:12px 20px;font-size:13px;"><i class="fab fa-facebook-f" style="margin-right:6px;"></i>Facebook</a>
-                                    <a href="https://www.instagram.com/ma.barbearia1/" target="_blank" class="btn" style="padding:12px 20px;font-size:13px;background:transparent;border:2px solid #d19f68;color:#d19f68;"><i class="fab fa-instagram" style="margin-right:6px;"></i>Instagram</a>
+                                    <a href="https://www.instagram.com/ma.barbearia1/" target="_blank" class="btn" style="padding:12px 20px;font-size:13px;background:transparent;border:2px solid #A58E66;color:#A58E66;"><i class="fab fa-instagram" style="margin-right:6px;"></i>Instagram</a>
                                 </div>
                             </div>
                         </div>
@@ -659,6 +663,31 @@
       bindNavClickSync();
     })();
     </script>
-    
+
+    <!-- Carrossel de serviços (desktop): setas ‹ › rolam a faixa um card por vez -->
+    <script>
+    (function () {
+      var row  = document.querySelector('#servicos .services-row');
+      var prev = document.querySelector('#servicos .services-prev');
+      var next = document.querySelector('#servicos .services-next');
+      if (!row || !prev || !next) return;
+
+      function step() {
+        var card = row.querySelector('[class*="col-"]');
+        return card ? card.getBoundingClientRect().width : row.clientWidth * 0.8;
+      }
+      function update() {
+        // desabilita a seta quando não há mais para onde rolar
+        prev.disabled = row.scrollLeft <= 2;
+        next.disabled = row.scrollLeft + row.clientWidth >= row.scrollWidth - 2;
+      }
+      prev.addEventListener('click', function () { row.scrollBy({ left: -step(), behavior: 'smooth' }); });
+      next.addEventListener('click', function () { row.scrollBy({ left:  step(), behavior: 'smooth' }); });
+      row.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+    </script>
+
     </body>
 </html>

@@ -40,6 +40,7 @@ if (admin_id()) {
     echo '<p class="sub">O que você quer administrar?</p>';
     echo '<div class="grid">';
     echo '<a class="tile" href="/admin/pdv/"><b>PDV</b><p>Licenças do sistema de PDV</p></a>';
+    echo '<a class="tile" href="/admin/proposta/"><b>Gerador de Proposta</b><p>Crie e gerencie propostas comerciais</p></a>';
     echo '</div>';
     layout_foot();
     exit;

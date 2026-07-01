@@ -1,0 +1,123 @@
+/* =========================================================================
+   doc.css — estilo do DOCUMENTO de proposta (A4). Fonte da verdade visual.
+   Carregado por render.php e injetado no <iframe> de preview do builder.
+   Não confundir com o CSS do painel admin (esse fica em lib/layout.php).
+   ========================================================================= */
+:root{
+  --purple:#6C5CE7; --purple2:#7C6CF6; --cyan:#4EA8FF; --cyan2:#56C7FF;
+  --ink:#12131A; --ink2:#2A2F3C; --muted:#5A6474; --line:#E6E9F0;
+  --soft:#F5F7FB; --card:#FFFFFF;
+  --grad:linear-gradient(120deg,#7C6CF6 0%,#4EA8FF 100%);
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{ font-family:"Inter",sans-serif; color:var(--ink2); font-size:10.3pt; line-height:1.55; background:#fff; }
+h1,h2,h3,h4{ font-family:"Sora",sans-serif; color:var(--ink); margin:0; }
+
+@page { size:A4; margin:16mm 15mm 17mm 15mm;
+  @bottom-left  { content:"Kennedev · kennedev.com.br"; font-family:"Inter"; font-size:7.5pt; color:#9AA3B2; }
+  @bottom-right { content:"Página " counter(page) " de " counter(pages); font-family:"Inter"; font-size:7.5pt; color:#9AA3B2; }
+  @top-right    { content:"Proposta comercial · Kennedev"; font-family:"Inter"; font-size:7.5pt; color:#B7BEC9; }
+}
+@page cover { margin:0; @bottom-left{content:none} @bottom-right{content:none} @top-right{content:none} }
+
+/* CAPA */
+.cover{ page:cover; position:relative; width:210mm; height:297mm; overflow:hidden; color:#EAF0F7;
+  background:
+    radial-gradient(60% 45% at 78% 8%, rgba(78,168,255,.20), rgba(78,168,255,0) 60%),
+    radial-gradient(55% 40% at 12% 22%, rgba(124,108,246,.28), rgba(124,108,246,0) 60%),
+    linear-gradient(180deg,#0B0F1A 0%,#0C1120 55%,#0A0E19 100%); }
+.cover .grid{ position:absolute; inset:0;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 46px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 46px);
+  mask-image:linear-gradient(180deg, rgba(0,0,0,.9), rgba(0,0,0,.25)); }
+.cover .inner{ position:relative; padding:26mm 24mm; height:100%; display:flex; flex-direction:column; }
+.brand{ display:flex; align-items:center; gap:9px; }
+.mark{ width:30px; height:30px; border-radius:9px; background:var(--grad); color:#fff;
+  font-family:"Sora"; font-weight:800; font-size:16px; line-height:30px; text-align:center;
+  box-shadow:0 6px 18px rgba(124,108,246,.45); }
+.brand .name{ font-family:"Sora"; font-weight:700; font-size:16pt; color:#fff; }
+.pill{ display:inline-flex; align-items:center; gap:7px; padding:6px 13px; border:1px solid rgba(255,255,255,.16);
+  border-radius:999px; font-size:8.4pt; letter-spacing:.14em; text-transform:uppercase; color:#C7CFDB; background:rgba(255,255,255,.03); }
+.pill .dot{ width:7px; height:7px; border-radius:50%; background:var(--cyan2); box-shadow:0 0 10px var(--cyan2); }
+.cover .lead{ margin-top:auto; }
+.cover h1{ color:#fff; font-weight:800; font-size:37pt; line-height:1.06; letter-spacing:-.5px; }
+.cover h1 .hl{ color:var(--cyan2); }
+.cover .sub{ margin-top:16px; max-width:150mm; color:#AEB7C6; font-size:11.5pt; line-height:1.6; }
+.clientbox{ margin-top:26px; display:flex; border:1px solid rgba(255,255,255,.12); border-radius:14px;
+  overflow:hidden; background:rgba(255,255,255,.03); max-width:150mm; }
+.clientbox .c{ padding:14px 18px; flex:1; } .clientbox .c + .c{ border-left:1px solid rgba(255,255,255,.10); }
+.clientbox .k{ font-size:7.6pt; letter-spacing:.13em; text-transform:uppercase; color:#8B95A6; }
+.clientbox .v{ font-family:"Sora"; font-weight:600; font-size:11pt; color:#EEF2F8; margin-top:3px; }
+.cover .foot{ margin-top:24px; display:flex; justify-content:space-between; color:#8B95A6; font-size:8.6pt; }
+.cover .accent{ position:absolute; left:0; right:0; bottom:0; height:7px; background:var(--grad); }
+
+/* CONTEÚDO */
+.eyebrow{ font-family:"Sora"; font-weight:700; font-size:8.2pt; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--purple); display:flex; align-items:center; gap:9px; }
+.eyebrow::before{ content:""; width:22px; height:3px; border-radius:3px; background:var(--grad); display:inline-block; }
+h2.sec{ font-size:20pt; font-weight:800; letter-spacing:-.3px; margin:9px 0 4px; line-height:1.12; }
+.sec-desc{ color:var(--muted); font-size:10pt; margin:0 0 15px; max-width:165mm; }
+.section{ break-inside:avoid; } .pb{ break-before:page; }
+strong{ color:var(--ink); } .small{ font-size:8.6pt; color:var(--muted); margin-top:10px; }
+.card{ background:var(--card); border:1px solid var(--line); border-radius:13px; padding:16px 18px; }
+.grid2{ display:flex; gap:12px; } .grid2 > *{ flex:1; }
+
+/* PRICE CARDS (com desconto opcional) */
+.prices{ display:flex; gap:12px; margin:4px 0 6px; }
+.price{ flex:1; border:1px solid var(--line); border-radius:14px; padding:15px 15px 16px; background:var(--card); position:relative; }
+.price.feature{ background:linear-gradient(180deg,#0E1424 0%,#0B0F1A 100%); border:none; color:#EAF0F7; }
+.price .tag{ font-size:7.8pt; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-family:"Sora"; font-weight:600; }
+.price.feature .tag{ color:#9FB4E8; padding-right:60px; }
+.price .was{ font-family:"Sora"; font-weight:600; font-size:10.5pt; color:#8FA6D6; text-decoration:line-through; margin-top:7px; }
+.price .amt{ font-family:"Sora"; font-weight:800; font-size:23pt; color:var(--ink); margin-top:6px; line-height:1; }
+.price.feature .amt{ color:#fff; margin-top:1px; } .price .amt small{ font-size:9pt; font-weight:600; color:var(--muted); }
+.price.feature .amt small{ color:#9FB4E8; }
+.price .note{ font-size:8.7pt; color:var(--muted); margin-top:7px; } .price.feature .note{ color:#AEB9CE; }
+.price .badge{ position:absolute; top:11px; right:11px; background:var(--grad); color:#fff;
+  font-family:"Sora"; font-weight:800; font-size:7.4pt; letter-spacing:.04em; padding:3px 8px; border-radius:999px; }
+.price .badge + .tag{ padding-right:54px; }              /* evita o texto correr sob o badge */
+.price:not(.feature) .was{ color:var(--muted); }         /* "de R$…" legível no card claro (criação) */
+
+/* CHECKLIST (ícone SVG, não usar caractere unicode) */
+.checks{ list-style:none; padding:0; margin:6px 0 0; }
+.checks li{ display:flex; gap:10px; align-items:flex-start; padding:6px 0; border-bottom:1px solid #EEF1F6; font-size:9.7pt; }
+.checks li:last-child{ border-bottom:none; }
+.ck{ flex:0 0 17px; width:17px; height:17px; margin-top:1px; } .checks b{ color:var(--ink); font-weight:600; }
+.col2{ column-count:2; column-gap:22px; } .col2 .checks li{ break-inside:avoid; }
+
+/* TABELA */
+table{ width:100%; border-collapse:collapse; margin-top:6px; font-size:9.4pt; }
+thead th{ background:linear-gradient(120deg,#7C6CF6,#4EA8FF); color:#fff; font-family:"Sora"; font-weight:600;
+  text-align:left; padding:9px 12px; font-size:8.8pt; }
+thead th:last-child{ text-align:center; width:34mm; }
+tbody td{ padding:8px 12px; border-bottom:1px solid var(--line); color:var(--ink2); vertical-align:middle; }
+tbody td:last-child{ text-align:center; font-family:"Sora"; font-weight:700; }
+tbody tr:nth-child(even){ background:var(--soft); }
+.inc{ color:#1E9E6A; } .paid{ color:var(--purple); }
+
+/* BENEFÍCIOS */
+.benes{ display:flex; flex-wrap:wrap; gap:12px; margin-top:4px; }
+.bene{ flex:0 0 calc(50% - 6px); border:1px solid var(--line); border-radius:13px; padding:14px 15px; background:var(--card); break-inside:avoid; }
+.bene .bt{ display:flex; align-items:center; gap:10px; }
+.bene .ico{ width:30px; height:30px; border-radius:9px; background:rgba(124,108,246,.10); display:flex; align-items:center; justify-content:center; }
+.bene h4{ font-size:10.6pt; font-weight:700; } .bene p{ margin:8px 0 0; font-size:9.2pt; color:var(--muted); }
+
+/* CONDIÇÕES + CTA + ASSINATURA */
+.cond{ list-style:none; padding:0; margin:0; }
+.cond li{ padding:9px 0; border-bottom:1px solid var(--line); display:flex; gap:14px; break-inside:avoid; }
+.cond li:last-child{ border-bottom:none; }
+.cond .lab{ flex:0 0 46mm; font-family:"Sora"; font-weight:600; color:var(--ink); font-size:9.4pt; }
+.cond .val{ flex:1; color:var(--ink2); font-size:9.5pt; }
+.callout{ border-left:3px solid transparent; border-image:var(--grad) 1; background:var(--soft);
+  border-radius:0 12px 12px 0; padding:13px 16px; margin-top:6px; }
+.callout .t{ font-family:"Sora"; font-weight:700; color:var(--ink); font-size:10pt; margin-bottom:3px; }
+.callout p{ margin:0; font-size:9.3pt; color:var(--ink2); }
+.cta{ margin-top:16px; border-radius:16px; overflow:hidden; color:#EAF0F7; padding:22px 24px;
+  background:radial-gradient(70% 120% at 85% 10%, rgba(78,168,255,.22), transparent 60%), linear-gradient(180deg,#0E1424,#0B0F1A); }
+.cta h3{ color:#fff; font-size:16pt; font-weight:800; } .cta p{ color:#AEB9CE; font-size:9.6pt; margin:6px 0 0; max-width:150mm; }
+.sign{ display:flex; gap:16px; margin-top:18px; } .sign .box{ flex:1; }
+.sign .line{ border-top:1px solid rgba(255,255,255,.3); padding-top:6px; margin-top:34px; font-size:8.4pt;
+  color:#9FB4E8; font-family:"Sora"; letter-spacing:.06em; text-transform:uppercase; }
+.contact{ margin-top:16px; display:flex; justify-content:space-between; align-items:center; color:var(--muted); font-size:9pt; }
