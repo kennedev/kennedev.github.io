@@ -35,12 +35,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // ── Logado: menu ─────────────────────────────────────────────────────────────
 if (admin_id()) {
+    // Parceiro não tem painel geral: vai direto para a área comercial.
+    if (!eh_admin()) {
+        header('Location: /admin/parceiros/');
+        exit;
+    }
     layout_head('Início', true);
     echo '<h1>Painel administrativo</h1>';
     echo '<p class="sub">O que você quer administrar?</p>';
     echo '<div class="grid">';
     echo '<a class="tile" href="/admin/pdv/"><b>PDV</b><p>Licenças do sistema de PDV</p></a>';
-    echo '<a class="tile" href="/admin/proposta/"><b>Gerador de Proposta</b><p>Crie e gerencie propostas comerciais</p></a>';
+    echo '<a class="tile" href="/admin/parceiros/"><b>Parceiros</b><p>Comercial: propostas, clientes fechados e comissões</p></a>';
+    echo '<a class="tile" href="/admin/arquivos/"><b>Arquivos</b><p>Envie e baixe arquivos avulsos</p></a>';
     echo '</div>';
     layout_foot();
     exit;

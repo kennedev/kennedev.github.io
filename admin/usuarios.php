@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/lib/auth.php';
 require_once __DIR__ . '/lib/layout.php';
-exigir_login();
+exigir_admin();
 sessao();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

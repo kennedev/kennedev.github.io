@@ -1,8 +1,8 @@
 <?php
 /* Dashboard das propostas — listagem, filtro, status inline, notas e ações.
    A tabela é preenchida via fetch em assets/dashboard.js (API em api.php). */
-require_once __DIR__ . '/../lib/auth.php';
-require_once __DIR__ . '/../lib/layout.php';
+require_once __DIR__ . '/../../lib/auth.php';
+require_once __DIR__ . '/../../lib/layout.php';
 exigir_login();
 sessao();
 
@@ -45,7 +45,7 @@ tr.detail>td{background:#0f172a;padding:16px}
         <?php foreach ($LABELS as $k => $v) echo '<option value="' . e($k) . '">' . e($v) . '</option>'; ?>
       </select>
     </div>
-    <a class="btn" href="/admin/proposta/novo.php">+ Nova proposta</a>
+    <a class="btn" href="/admin/parceiros/proposta/novo.php">+ Nova proposta</a>
   </div>
 </div>
 

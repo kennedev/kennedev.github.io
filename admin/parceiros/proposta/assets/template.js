@@ -341,7 +341,9 @@
         '<div class="contact"><span>' + esc(d.contatoSite || '') + '</span><span>' + esc(d.contatoEmail || '') + '</span></div>' +
       '</section>';
 
-    return cover + apresentacao + investimento + novas + benes + cond;
+    // Investimento vem só depois de apresentar valor (novas criações + benefícios),
+    // logo antes do "Combinado final" — evita o preço logo de cara.
+    return cover + apresentacao + novas + benes + investimento + cond;
   }
 
   // ---- Export -----------------------------------------------------------

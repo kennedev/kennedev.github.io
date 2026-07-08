@@ -2,8 +2,8 @@
 /* Builder de proposta — formulário + preview ao vivo (iframe).
    Cria (sem ?id) ou edita (?id=N). Os campos são hidratados por builder.js
    a partir de window.PROPOSTA (edição) ou window.propostaDefaults() (novo). */
-require_once __DIR__ . '/../lib/auth.php';
-require_once __DIR__ . '/../lib/layout.php';
+require_once __DIR__ . '/../../lib/auth.php';
+require_once __DIR__ . '/../../lib/layout.php';
 exigir_login();
 sessao();
 
@@ -13,6 +13,8 @@ if ($id > 0) {
     $st = db()->prepare('SELECT * FROM propostas WHERE id = ?');
     $st->execute(array($id));
     $row = $st->fetch();
+    // Parceiro só edita as próprias propostas; admin edita qualquer uma.
+    if ($row && !eh_admin() && (int) $row['criado_por'] !== (int) admin_id()) $row = null;
     if ($row) {
         $proposta = json_decode($row['dados'], true);
         if (!is_array($proposta)) $proposta = array();
@@ -58,7 +60,7 @@ textarea:focus{border-color:#6366f1}
 .previewnote{font-size:12px;color:#64748b;margin-bottom:8px}
 </style>
 
-<a href="/admin/proposta/" class="sub" style="text-decoration:none;color:#94a3b8">&larr; Voltar às propostas</a>
+<a href="/admin/parceiros/proposta/" class="sub" style="text-decoration:none;color:#94a3b8">&larr; Voltar às propostas</a>
 <h1 style="margin-top:8px"><?= $id ? 'Editar proposta' : 'Nova proposta' ?></h1>
 <p class="sub">Preencha empresa e valores — o resto já vem preenchido. O preview atualiza ao digitar.</p>
 

@@ -1,0 +1,12 @@
+# Não permite navegar/listar as pastas de apps.
+Options -Indexes
+
+# Não serve os metadados diretamente (usados só pelo index.php).
+<Files "app.json">
+    Require all denied
+</Files>
+
+# Força download dos instaladores caso acessados por URL direta.
+<FilesMatch "\.(exe|msi|dmg|AppImage|zip|apk)$">
+    Header set Content-Disposition "attachment"
+</FilesMatch>

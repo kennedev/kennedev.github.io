@@ -2,8 +2,8 @@
 /* render.php — view de impressão limpa (sem chrome do admin).
    Lê ?id=, injeta os dados salvos e renderiza o documento via template.js.
    Botão "Baixar PDF" chama window.print() → impressão vetorial fiel (A4). */
-require_once __DIR__ . '/../lib/auth.php';
-require_once __DIR__ . '/../lib/db.php';
+require_once __DIR__ . '/../../lib/auth.php';
+require_once __DIR__ . '/../../lib/db.php';
 exigir_login();
 sessao();
 
@@ -13,6 +13,8 @@ if ($id > 0) {
     $st = db()->prepare('SELECT * FROM propostas WHERE id = ?');
     $st->execute(array($id));
     $row = $st->fetch();
+    // Parceiro só abre as próprias propostas; admin abre qualquer uma.
+    if ($row && !eh_admin() && (int) $row['criado_por'] !== (int) admin_id()) $row = null;
     if ($row) {
         $dados = json_decode($row['dados'], true);
         if (!is_array($dados)) $dados = array();
@@ -51,15 +53,15 @@ $jsonFlags = JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QU
 </head>
 <body>
 <?php if (!$dados): ?>
-  <div class="toolbar"><b>Proposta não encontrada.</b><span class="sp"></span><a href="/admin/proposta/">← Voltar</a></div>
-  <p style="font-family:sans-serif;padding:80px 24px;color:#334155">O id informado não existe. <a href="/admin/proposta/">Voltar à lista</a>.</p>
+  <div class="toolbar"><b>Proposta não encontrada.</b><span class="sp"></span><a href="/admin/parceiros/proposta/">← Voltar</a></div>
+  <p style="font-family:sans-serif;padding:80px 24px;color:#334155">O id informado não existe. <a href="/admin/parceiros/proposta/">Voltar à lista</a>.</p>
 <?php else: ?>
   <div class="toolbar">
     <button class="pbtn" id="btnPrint" disabled>⬇ Baixar PDF</button>
     <span>No diálogo: mantenha <b>"Gráficos de segundo plano"</b> ligado e destino <b>"Salvar como PDF"</b>.</span>
     <span class="sp"></span>
     <a href="novo.php?id=<?= (int) $id ?>">Editar</a>
-    <a href="/admin/proposta/">← Lista</a>
+    <a href="/admin/parceiros/proposta/">← Lista</a>
   </div>
   <div id="doc"></div>
   <script>window.PROPOSTA = <?= json_encode($dados, $jsonFlags) ?>;</script>

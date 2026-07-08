@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../lib/auth.php';
 require_once __DIR__ . '/../lib/layout.php';
-exigir_login();
+exigir_admin();
 sessao();
 
 /** Chave AAAAA-BBBBB-CCCCC (sem 0/O/1/I para não confundir). */

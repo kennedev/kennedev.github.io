@@ -1,0 +1,3 @@
+# Impede acesso HTTP direto aos arquivos — o download passa só pelo baixar.php (com login).
+Require all denied
+Options -Indexes

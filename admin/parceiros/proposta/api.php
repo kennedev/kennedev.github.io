@@ -5,8 +5,8 @@
    Reads:     GET  ?op=list[&status=&q=]  |  ?op=get&id=
    Mutations: POST {op:create|update|updateStatus|addComment|duplicate|delete, ...}
    ========================================================================= */
-require_once __DIR__ . '/../lib/auth.php';
-require_once __DIR__ . '/../lib/http.php';
+require_once __DIR__ . '/../../lib/auth.php';
+require_once __DIR__ . '/../../lib/http.php';
 
 sessao();
 if (!admin_id()) {
@@ -23,6 +23,8 @@ if ($metodo === 'GET') {
 
     if ($op === 'list') {
         $where = array(); $params = array();
+        // Parceiro só enxerga as próprias propostas; admin vê todas.
+        if (!eh_admin()) { $where[] = 'criado_por = ?'; $params[] = (int) admin_id(); }
         $status = $_GET['status'] ?? '';
         if (in_array($status, STATUSES, true)) { $where[] = 'status = ?'; $params[] = $status; }
         $q = trim($_GET['q'] ?? '');
@@ -51,7 +53,7 @@ if ($metodo === 'GET') {
 
     if ($op === 'get') {
         $p = carregar((int) ($_GET['id'] ?? 0));
-        if (!$p) json_out(404, array('ok' => false, 'erro' => 'nao_encontrada'));
+        if (!$p || !dono_ok($p)) json_out(404, array('ok' => false, 'erro' => 'nao_encontrada'));
         json_out(200, array('ok' => true, 'proposta' => $p));
     }
 
@@ -73,11 +75,11 @@ if ($metodo === 'POST') {
         if ($d['empresa'] === '') json_out(422, array('ok' => false, 'erro' => 'empresa_obrigatoria'));
         $d['comentarios'] = array();
         $st = db()->prepare(
-            'INSERT INTO propostas (empresa, segmento, emissao, valor_mensal, status, dados) VALUES (?,?,?,?,?,?)'
+            'INSERT INTO propostas (empresa, segmento, emissao, valor_mensal, status, dados, criado_por) VALUES (?,?,?,?,?,?,?)'
         );
         $st->execute(array(
             $d['empresa'], $d['segmento'], data_ou_null($d['emissao']),
-            $d['valorMensal'], $d['status'], enc($d),
+            $d['valorMensal'], $d['status'], enc($d), (int) admin_id(),
         ));
         json_out(200, array('ok' => true, 'id' => (int) db()->lastInsertId()));
     }
@@ -85,7 +87,7 @@ if ($metodo === 'POST') {
     if ($op === 'update') {
         $id = (int) ($in['id'] ?? 0);
         $atual = carregar($id);
-        if (!$atual) json_out(404, array('ok' => false, 'erro' => 'nao_encontrada'));
+        if (!$atual || !dono_ok($atual)) json_out(404, array('ok' => false, 'erro' => 'nao_encontrada'));
         $d = sanitize_dados($in['dados'] ?? array());
         if ($d['empresa'] === '') json_out(422, array('ok' => false, 'erro' => 'empresa_obrigatoria'));
         // Comentários são geridos por addComment — preserva os existentes.
@@ -105,10 +107,12 @@ if ($metodo === 'POST') {
         $status = $in['status'] ?? '';
         if (!in_array($status, STATUSES, true)) json_out(422, array('ok' => false, 'erro' => 'status_invalido'));
         $atual = carregar($id);
-        if (!$atual) json_out(404, array('ok' => false, 'erro' => 'nao_encontrada'));
+        if (!$atual || !dono_ok($atual)) json_out(404, array('ok' => false, 'erro' => 'nao_encontrada'));
         $atual['status'] = $status;
         $st = db()->prepare('UPDATE propostas SET status=?, dados=?, atualizado_em=NOW() WHERE id=?');
         $st->execute(array($status, enc($atual), $id));
+        // Proposta aceita de um parceiro → gera cliente pendente na carteira dele.
+        if ($status === 'aceita') gerar_cliente_pendente($atual);
         json_out(200, array('ok' => true));
     }
 
@@ -117,7 +121,7 @@ if ($metodo === 'POST') {
         $texto = trim((string) ($in['texto'] ?? ''));
         if ($texto === '') json_out(422, array('ok' => false, 'erro' => 'texto_vazio'));
         $atual = carregar($id);
-        if (!$atual) json_out(404, array('ok' => false, 'erro' => 'nao_encontrada'));
+        if (!$atual || !dono_ok($atual)) json_out(404, array('ok' => false, 'erro' => 'nao_encontrada'));
         $c = array('data' => date('Y-m-d H:i:s'), 'texto' => mb_substr($texto, 0, 2000));
         if (!is_array($atual['comentarios'] ?? null)) $atual['comentarios'] = array();
         $atual['comentarios'][] = $c;
@@ -129,23 +133,25 @@ if ($metodo === 'POST') {
     if ($op === 'duplicate') {
         $id = (int) ($in['id'] ?? 0);
         $src = carregar($id);
-        if (!$src) json_out(404, array('ok' => false, 'erro' => 'nao_encontrada'));
+        if (!$src || !dono_ok($src)) json_out(404, array('ok' => false, 'erro' => 'nao_encontrada'));
         $src['empresa']     = mb_substr(($src['empresa'] ?? '') . ' (cópia)', 0, 160);
         $src['status']      = 'rascunho';
         $src['comentarios'] = array();
-        unset($src['id'], $src['criadoEm'], $src['atualizadoEm']);
+        unset($src['id'], $src['criadoEm'], $src['atualizadoEm'], $src['criadoPor']);
         $st = db()->prepare(
-            'INSERT INTO propostas (empresa, segmento, emissao, valor_mensal, status, dados) VALUES (?,?,?,?,?,?)'
+            'INSERT INTO propostas (empresa, segmento, emissao, valor_mensal, status, dados, criado_por) VALUES (?,?,?,?,?,?,?)'
         );
         $st->execute(array(
             $src['empresa'], $src['segmento'] ?? '', data_ou_null($src['emissao'] ?? ''),
-            (float) ($src['valorMensal'] ?? 0), 'rascunho', enc($src),
+            (float) ($src['valorMensal'] ?? 0), 'rascunho', enc($src), (int) admin_id(),
         ));
         json_out(200, array('ok' => true, 'id' => (int) db()->lastInsertId()));
     }
 
     if ($op === 'delete') {
         $id = (int) ($in['id'] ?? 0);
+        $alvo = carregar($id);
+        if (!$alvo || !dono_ok($alvo)) json_out(404, array('ok' => false, 'erro' => 'nao_encontrada'));
         db()->prepare('DELETE FROM propostas WHERE id=?')->execute(array($id));
         json_out(200, array('ok' => true));
     }
@@ -169,9 +175,44 @@ function carregar($id) {
     if (!is_array($dados)) $dados = array();
     $dados['id']           = (int) $row['id'];
     $dados['status']       = $row['status'];        // coluna é a fonte da verdade
+    $dados['criadoPor']    = $row['criado_por'] !== null ? (int) $row['criado_por'] : null;
     $dados['criadoEm']     = $row['criado_em'];
     $dados['atualizadoEm'] = $row['atualizado_em'];
     return $dados;
+}
+
+/** Parceiro só acessa as próprias propostas; admin acessa qualquer uma. */
+function dono_ok($prop) {
+    return eh_admin() || (int) ($prop['criadoPor'] ?? 0) === (int) admin_id();
+}
+
+/**
+ * Ao aceitar uma proposta criada por um PARCEIRO, cria um cliente na carteira dele
+ * com aprovacao='pendente' (o admin aprova depois e define a data de recorrência).
+ * Não faz nada se a proposta é de admin/sem autor ou se já há cliente para ela.
+ */
+function gerar_cliente_pendente($proposta) {
+    $autor = (int) ($proposta['criadoPor'] ?? 0);
+    if ($autor <= 0) return;
+
+    $st = db()->prepare('SELECT papel FROM admins WHERE id = ? LIMIT 1');
+    $st->execute(array($autor));
+    if ($st->fetchColumn() !== 'parceiro') return;   // só parceiro gera cliente
+
+    $ck = db()->prepare('SELECT COUNT(*) FROM clientes_fechados WHERE proposta_id = ?');
+    $ck->execute(array((int) $proposta['id']));
+    if ((int) $ck->fetchColumn() > 0) return;         // já existe cliente para esta proposta
+
+    db()->prepare(
+        'INSERT INTO clientes_fechados
+           (parceiro_id, proposta_id, empresa, valor_projeto, valor_recorrencia,
+            prazo_comissao_meses, primeira_recorrencia, status, aprovacao)
+         VALUES (?,?,?,?,?,?,NULL,?,?)'
+    )->execute(array(
+        $autor, (int) $proposta['id'], mb_substr((string) ($proposta['empresa'] ?? ''), 0, 160),
+        (float) ($proposta['valorCriacao'] ?? 0), (float) ($proposta['valorMensal'] ?? 0),
+        12, 'ativo', 'pendente',
+    ));
 }
 
 function enc($d) {

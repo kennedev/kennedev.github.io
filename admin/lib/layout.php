@@ -9,8 +9,16 @@ function layout_head($titulo, $logado = false) {
     echo '<header class="top"><a class="brand" href="/admin/">kennedev<span>admin</span></a>';
     if ($logado) {
         echo '<nav>';
-        echo '<a href="/admin/">Início</a>';
-        echo '<a href="/admin/usuarios.php">Administradores</a>';
+        if (eh_admin()) {
+            echo '<a href="/admin/">Início</a>';
+            echo '<a href="/admin/parceiros/">Parceiros</a>';
+            echo '<a href="/admin/usuarios.php">Administradores</a>';
+        } else {
+            echo '<a href="/admin/parceiros/">Início</a>';
+            echo '<a href="/admin/parceiros/proposta/">Propostas</a>';
+            echo '<a href="/admin/parceiros/clientes.php">Minha carteira</a>';
+        }
+        echo '<a href="/admin/senha.php">Trocar senha</a>';
         echo '<span class="who">' . e(admin_nome()) . '</span>';
         echo '<a class="out" href="/admin/logout.php">Sair</a>';
         echo '</nav>';

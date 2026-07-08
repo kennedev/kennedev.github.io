@@ -199,7 +199,7 @@
       if (!r.ok) { showErr('Erro ao salvar (' + (r.erro || '?') + ').'); return; }
       var id = window.PROP_ID || r.id;
       if (destino === 'pdf') window.location.href = 'render.php?id=' + id;
-      else window.location.href = '/admin/proposta/';
+      else window.location.href = '/admin/parceiros/proposta/';
     }).catch(function () { showErr('Falha de conexão.'); });
   }
 
