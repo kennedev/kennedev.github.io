@@ -5,6 +5,7 @@ function layout_head($titulo, $logado = false) {
     $t = e($titulo);
     echo '<!doctype html><html lang="pt-br"><head><meta charset="utf-8">';
     echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
+    echo '<meta name="robots" content="noindex, nofollow">';
     echo "<title>{$t} · Admin kennedev</title><style>" . layout_css() . '</style></head><body>';
     echo '<header class="top"><a class="brand" href="/admin/">kennedev<span>admin</span></a>';
     if ($logado) {

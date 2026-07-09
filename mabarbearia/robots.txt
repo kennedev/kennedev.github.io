@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /Doc/
+
+Sitemap: https://mabarbearia.com.br/sitemap.xml

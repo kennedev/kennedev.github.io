@@ -8,6 +8,15 @@ $apps = apps_disponiveis();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#070b16">
 <title>Downloads · Kennedev</title>
+<meta name="description" content="Baixe os aplicativos e ferramentas da Kennedev. Downloads oficiais, sempre atualizados.">
+<link rel="canonical" href="https://kennedev.com.br/apps/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kennedev">
+<meta property="og:title" content="Downloads · Kennedev">
+<meta property="og:description" content="Baixe os aplicativos e ferramentas da Kennedev. Downloads oficiais, sempre atualizados.">
+<meta property="og:url" content="https://kennedev.com.br/apps/">
+<meta property="og:image" content="https://kennedev.com.br/img/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#070b16;color:#e2e8f0;line-height:1.55;min-height:100vh}

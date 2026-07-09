@@ -545,14 +545,22 @@ a {
     animation-play-state: paused;
 }
 
-.marquee-track i {
+.tech-ico {
+    height: 2.6rem;
+    width: auto;
+    display: block;
+}
+
+.marquee-track i,
+.marquee-track .tech-ico {
     font-size: 2.6rem;
     filter: grayscale(100%);
     opacity: 0.45;
     transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
-.marquee:hover .marquee-track i {
+.marquee:hover .marquee-track i,
+.marquee:hover .marquee-track .tech-ico {
     filter: grayscale(0);
     opacity: 0.9;
 }
@@ -1581,6 +1589,10 @@ a {
     .marquee-track i {
         font-size: 2.2rem;
     }
+
+    .marquee-track .tech-ico {
+        height: 2.2rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1652,7 +1664,8 @@ a {
         font-size: 0.75rem;
     }
 
-    .marquee-track i {
+    .marquee-track i,
+    .marquee-track .tech-ico {
         filter: grayscale(60%);
         opacity: 0.65;
     }
