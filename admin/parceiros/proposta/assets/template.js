@@ -303,7 +303,7 @@
       '<section class="section pb">' +
         '<div class="eyebrow">Investimento</div>' +
         '<h2 class="sec">Valores e tudo o que está incluso</h2>' +
-        '<p class="sec-desc">Criação já contratada e uma mensalidade que cobre tudo para o site funcionar sem preocupação.</p>' +
+        '<p class="sec-desc">Criação e uma mensalidade que cobre tudo para o site funcionar sem preocupação.</p>' +
         precos(d) +
         '<div class="callout"><div class="t">O plano mensal inclui</div><div class="col2">' + checks(d.inclusoes, d) + '</div></div>' +
         '<p class="small">' + esc(subst(d.notaAsterisco, d)) + '</p>' +
@@ -341,9 +341,10 @@
         '<div class="contact"><span>' + esc(d.contatoSite || '') + '</span><span>' + esc(d.contatoEmail || '') + '</span></div>' +
       '</section>';
 
-    // Investimento vem só depois de apresentar valor (novas criações + benefícios),
-    // logo antes do "Combinado final" — evita o preço logo de cara.
-    return cover + apresentacao + novas + benes + investimento + cond;
+    // Benefícios constroem valor antes do preço (evita abrir com número).
+    // Novas criações vêm logo após Investimento — detalham o card "a partir de
+    // R$ X" já teased em precos(); depois fecha no "Combinado final".
+    return cover + apresentacao + benes + investimento + novas + cond;
   }
 
   // ---- Export -----------------------------------------------------------

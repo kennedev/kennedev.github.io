@@ -129,14 +129,14 @@ textarea:focus{border-color:#6366f1}
         <button type="button" class="addbtn" data-add="inclusoes">+ adicionar inclusão</button>
       </div>
 
-      <div class="grp"><h3>Novas criações (tabela)</h3>
-        <div data-list="novasCriacoes"></div>
-        <button type="button" class="addbtn" data-add="novasCriacoes">+ adicionar linha</button>
-      </div>
-
       <div class="grp"><h3>Benefícios</h3>
         <div data-list="beneficios"></div>
         <button type="button" class="addbtn" data-add="beneficios">+ adicionar benefício</button>
+      </div>
+
+      <div class="grp"><h3>Novas criações (tabela)</h3>
+        <div data-list="novasCriacoes"></div>
+        <button type="button" class="addbtn" data-add="novasCriacoes">+ adicionar linha</button>
       </div>
 
       <div class="grp"><h3>Condições comerciais</h3>
