@@ -114,7 +114,7 @@ textarea:focus{border-color:#6366f1}
         <div class="fld"><label>Novas criações — a partir de (R$)</label><input type="number" step="0.01" data-field="valorNovaCriacao" data-type="number"></div>
       </div>
 
-      <div class="grp"><h3>O que já foi entregue</h3>
+      <div class="grp"><h3>O que Entregamos</h3>
         <div data-list="entregue"></div>
         <button type="button" class="addbtn" data-add="entregue">+ adicionar item</button>
       </div>

@@ -91,9 +91,9 @@
       tituloCapa: 'Seu site profissional, no ar e sempre atualizado.',
       palavraDestaque: 'atualizado',
       subtitulo: 'Proposta de hospedagem, manutenção e evolução contínua do site da {{EMPRESA}} — para você focar no seu negócio enquanto a Kennedev cuida da sua presença digital.',
-      valorCriacao: 1200, temDescontoCriacao: false, valorCriacaoCheio: 1200, rotuloCriacao: 'único, já contratado',
-      valorMensal: 150, temDesconto: false, valorMensalCheio: 150, rotuloCondicao: 'Condição especial',
-      valorNovaCriacao: 200,
+      valorCriacao: 1290, temDescontoCriacao: false, valorCriacaoCheio: 1290, rotuloCriacao: 'único',
+      valorMensal: 149, temDesconto: false, valorMensalCheio: 150, rotuloCondicao: 'Condição especial',
+      valorNovaCriacao: 199,
       entregue: [
         'Site institucional completo e responsivo (celular, tablet e desktop)',
         'Identidade visual aplicada — cores, tipografia e logotipo',
@@ -124,9 +124,9 @@
         { descricao: 'Trocar preços, textos ou fotos', cobranca: 'Incluso' },
         { descricao: 'Adicionar/editar item nas seções atuais', cobranca: 'Incluso' },
         { descricao: 'Corrigir erros / manter no ar', cobranca: 'Incluso' },
-        { descricao: 'Criar nova página', cobranca: 'R$ 200' },
-        { descricao: 'Landing page de campanha', cobranca: 'R$ 200' },
-        { descricao: 'Blog / seção de conteúdo', cobranca: 'R$ 200' },
+        { descricao: 'Criar nova página', cobranca: 'R$ 199' },
+        { descricao: 'Landing page de campanha', cobranca: 'R$ 299' },
+        { descricao: 'Blog / seção de conteúdo', cobranca: 'R$ 299' },
         { descricao: 'Nova funcionalidade (integração, agenda)', cobranca: 'sob orçamento' }
       ],
       calloutNovasTitulo: 'Novidade entra, mensalidade não sobe',
@@ -226,7 +226,7 @@
       rows += '<tr><td>' + esc(subst(r.descricao, d)) + '</td>' +
               '<td class="' + cobrancaCls(r.cobranca) + '">' + esc(r.cobranca) + '</td></tr>';
     });
-    return '<table><thead><tr><th>Pedido</th><th>Como é cobrado</th></tr></thead><tbody>' +
+    return '<table><thead><tr><th>Pedido</th><th>Como é cobrado (A partir de)</th></tr></thead><tbody>' +
            rows + '</tbody></table>';
   }
 
@@ -294,7 +294,7 @@
         '<h2 class="sec">Seu site, sempre no ar e bem cuidado</h2>' +
         '<p class="sec-desc">' + esc(subst('Este documento reúne o que já está no ar e como a Kennedev mantém o site da {{EMPRESA}} rápido, seguro e sempre atualizado.', d)) + '</p>' +
         '<div class="grid2">' +
-          '<div class="card"><div class="eyebrow" style="color:#1E9E6A">O que já foi entregue</div>' + checks(d.entregue, d) + '</div>' +
+          '<div class="card"><div class="eyebrow" style="color:#1E9E6A">O que entregamos</div>' + checks(d.entregue, d) + '</div>' +
           '<div class="card"><div class="eyebrow">O objetivo</div>' + checks(d.objetivo, d) + '</div>' +
         '</div>' +
       '</section>';
