@@ -24,11 +24,11 @@ O repo mistura **um site publicado na raiz** com várias pastas que são **teste
 Sempre confirme com o usuário antes de gastar esforço.
 
 - **Reais/publicados:** `./` (Kennedev, em `kennedev.com.br`, Hostinger),
-  `imobiliaria/` (`www.imobiliarialuisimoveis.com.br`), `apps/` (`kennedev.com.br/apps`),
-  `mabarbearia/` (`mabarbearia.com.br`).
+  `sites/imobiliaria/` (`www.imobiliarialuisimoveis.com.br`), `apps/` (`kennedev.com.br/apps`),
+  `sites/mabarbearia/` (`mabarbearia.com.br`).
 - **Área logada (NÃO indexar — só `noindex`):** `admin/`.
-- **Testes locais (confirmar caso a caso):** `tecnopest/`, `telafacil/`, `verbuz/`,
-  `vicente/`, `casaquadradaimobiliaria/`.
+- **Testes locais (confirmar caso a caso):** `sites/tecnopest/`, `sites/telafacil/`, `sites/verbuz/`,
+  `sites/vicente/`, `sites/casaquadradaimobiliaria/`.
 - Cada subsite tem seus próprios assets; a pasta `img/` da raiz é **do Kennedev**.
 
 ## 2. Auditoria rápida (o que checar por site)
@@ -42,9 +42,9 @@ find <site> -type f \( -iname "*.jpg" -o -iname "*.png" \) -size +300k \
   -printf '%s\t%p\n' | sort -rn | awk '{printf "%.2fMB\t%s\n",$1/1048576,$2}'
 ```
 
-Referência de site "bem feito" neste repo: **`telafacil/index.html`** (canonical + og:* completo).
+Referência de site "bem feito" neste repo: **`sites/telafacil/index.html`** (canonical + og:* completo).
 Sites PHP: o `<head>` costuma ser gerado em helper compartilhado
-(`imobiliaria/lib/publico.php` → `site_head()`, `admin/lib/layout.php` → `layout_head()`);
+(`sites/imobiliaria/lib/publico.php` → `site_head()`, `admin/lib/layout.php` → `layout_head()`);
 `apps/index.php` tem head inline.
 
 ## 3. Ferramentas de imagem (maior ROI de performance)
@@ -107,7 +107,7 @@ smile) do simple-icons e bake a cor: `simple-icons@13/icons/amazonwebservices.sv
 
 - Nenhum site tinha. Um por domínio, na raiz do docroot daquele site.
 - Estático (`.xml`) pra sites de páginas fixas; **dinâmico (`.php`)** quando há páginas de
-  banco (ex.: `imobiliaria/sitemap.php` enumera imóveis `status='disponivel'`).
+  banco (ex.: `sites/imobiliaria/sitemap.php` enumera imóveis `status='disponivel'`).
 - `robots.txt`: `Allow: /`, `Disallow:` a área admin, e `Sitemap:` com URL absoluta.
 
 ## 7. Verificação (faça antes de declarar pronto)

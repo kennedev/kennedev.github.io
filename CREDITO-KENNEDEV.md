@@ -1,7 +1,7 @@
 # Crédito "Desenvolvido por Kennedev" — padrão para todos os sites
 
 Snippet reutilizável do selo de autoria no rodapé. Use **igual** em todo site novo
-para manter o padrão. Referência viva: `vidrosplanejados/` (implementação atual).
+para manter o padrão. Referência viva: `sites/vidrosplanejados/` (implementação atual).
 
 ---
 
@@ -89,7 +89,7 @@ Para copyright à esquerda e crédito à direita, com empilhamento no mobile:
 
 ## 5. Sites PHP (padrão legado, sem logo)
 
-Os sites PHP (`imobiliaria/`, `vicente/`, `casaquadradaimobiliaria/`) usam a versão
+Os sites PHP (`sites/imobiliaria/`, `sites/vicente/`, `sites/casaquadradaimobiliaria/`) usam a versão
 só-texto no helper `lib/publico.php`. Mantida para compatibilidade:
 
 ```php
