@@ -13,8 +13,12 @@ Fonte oficial em WebP (fundo escuro embutido, quadrado 1024×1024):
 assets/logo-kennedev/logo-kennedev.webp
 ```
 
-**Copie** esse arquivo para dentro dos assets do site novo (cada site é publicado
-isolado — nunca referencie caminho externo tipo `../../assets/...`). Ex.:
+> **Regra obrigatória:** o logo SEMPRE deve ser **copiado para uma pasta de assets DENTRO
+> do site destino**, e o crédito referencia essa cópia local. NUNCA referencie o logo do
+> Portifolio nem qualquer caminho externo (nem `../../assets/...`). Cada site é publicado
+> isolado e só terá o selo se tiver a **sua própria cópia** do arquivo.
+
+**Copie** esse arquivo para dentro dos assets do site novo. Ex.:
 
 ```
 <seu-site>/assets/img/logo-kennedev.webp
@@ -102,7 +106,7 @@ Para adicionar o logo nesses, use o HTML do item 2 dentro do `echo`.
 
 ## Checklist ao criar site novo
 
-- [ ] Copiar `logo-kennedev.webp` para os assets do site
+- [ ] **Copiar `logo-kennedev.webp` para os assets DENTRO do site destino** (pré-requisito — sem a cópia local o selo não funciona; nunca referencie o Portifolio)
 - [ ] Colar o HTML do item 2 (ajustar `src`)
 - [ ] Colar o CSS do item 3 (claro ou escuro conforme o rodapé)
 - [ ] Link sempre `https://www.kennedev.com.br` + `target="_blank"` + `rel="noopener"`
