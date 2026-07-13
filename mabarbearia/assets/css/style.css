@@ -315,3 +315,10 @@
   filter: invert(1) brightness(2);
   transform: scale(1.1);
 }
+
+
+/* Crédito Kennedev (rodapé) — padrão CREDITO-KENNEDEV.md */
+.footer-copy-right .footer-credit { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; color: rgba(255,255,255,.6); font-family: "Josefin Sans", sans-serif; font-size: 14px; text-decoration: none; }
+.footer-copy-right .footer-credit img { width: 24px; height: 24px; border-radius: 6px; display: block; }
+.footer-copy-right .footer-credit strong { color: #fff; font-weight: 700; }
+.footer-copy-right .footer-credit:hover strong { color: #c6a16e; }

@@ -203,25 +203,12 @@ a {
 
 .logo-mark {
     position: relative;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 9px;
-    background: var(--gradient-brand);
-    box-shadow: 0 6px 18px -6px rgba(99, 102, 241, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    background: url("../img/logo-mark.webp") center / cover no-repeat, var(--gradient-brand);
+    box-shadow: 0 4px 14px -6px rgba(22, 150, 232, 0.55);
     flex-shrink: 0;
-}
-
-.logo-mark::after {
-    content: '>';
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 500;
-    font-size: 0.95rem;
-    color: #fff;
 }
 
 .logo-text {
